@@ -185,6 +185,8 @@
 				B02688F3191F78500005CE52 /* data */,
 				B02688F5191F78630005CE52 /* logic */,
 				B02688C1191F77460005CE52 /* Supporting Files */,
+				B0268963191F8AC00005CE52 /* xViewController.h */,
+				B0268964191F8AC00005CE52 /* xViewController.m */,
 			);
 			path = XHomeDemo;
 			sourceTree = "<group>";
@@ -577,6 +579,7 @@
 				B02688EE191F77470005CE52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
