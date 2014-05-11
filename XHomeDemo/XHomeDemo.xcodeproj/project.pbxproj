@@ -17,6 +17,7 @@
 		B02688D1191F77470005CE52 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02688CF191F77470005CE52 /* Main_iPad.storyboard */; };
 		B02688D4191F77470005CE52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02688D3191F77470005CE52 /* ViewController.m */; };
 		B02688D6191F77470005CE52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02688D5191F77470005CE52 /* Images.xcassets */; };
+		B0268965191F8AC00005CE52 /* xViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0268964191F8AC00005CE52 /* xViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		B02688D3191F77470005CE52 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B02688D5191F77470005CE52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B02688DC191F77470005CE52 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B0268963191F8AC00005CE52 /* xViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xViewController.h; sourceTree = "<group>"; };
+		B0268964191F8AC00005CE52 /* xViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				B02688D3191F77470005CE52 /* ViewController.m */,
 				B02688D5191F77470005CE52 /* Images.xcassets */,
 				B02688C1191F77460005CE52 /* Supporting Files */,
+				B0268963191F8AC00005CE52 /* xViewController.h */,
+				B0268964191F8AC00005CE52 /* xViewController.m */,
 			);
 			path = XHomeDemo;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				B02688D4191F77470005CE52 /* ViewController.m in Sources */,
 				B02688CB191F77460005CE52 /* AppDelegate.m in Sources */,
 				B02688C7191F77460005CE52 /* main.m in Sources */,
+				B0268965191F8AC00005CE52 /* xViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +331,7 @@
 				B02688EE191F77470005CE52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
