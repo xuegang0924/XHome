@@ -53,6 +53,21 @@
 		B026895D191F83850005CE52 /* SocViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B026895B191F83850005CE52 /* SocViewController.xib */; };
 		B0268961191F83DA0005CE52 /* AirconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B026895F191F83DA0005CE52 /* AirconViewController.m */; };
 		B0268962191F83DA0005CE52 /* AirconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0268960191F83DA0005CE52 /* AirconViewController.xib */; };
+		B032C63D1924A36100C08402 /* TurnOFFImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = B032C63C1924A36100C08402 /* TurnOFFImage1.png */; };
+		B032C6411924C34F00C08402 /* RoomsAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C63F1924C34F00C08402 /* RoomsAddViewController.m */; };
+		B032C6421924C34F00C08402 /* RoomsAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B032C6401924C34F00C08402 /* RoomsAddViewController.xib */; };
+		B032C6521924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6461924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.m */; };
+		B032C6531924C42400C08402 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6491924C42400C08402 /* FMDatabase.m */; };
+		B032C6541924C42400C08402 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C64B1924C42400C08402 /* FMDatabaseAdditions.m */; };
+		B032C6551924C42400C08402 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C64D1924C42400C08402 /* FMDatabasePool.m */; };
+		B032C6561924C42400C08402 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C64F1924C42400C08402 /* FMDatabaseQueue.m */; };
+		B032C6571924C42400C08402 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6511924C42400C08402 /* FMResultSet.m */; };
+		B032C6651924C43100C08402 /* LKDB+Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C65A1924C43100C08402 /* LKDB+Manager.m */; };
+		B032C6661924C43100C08402 /* LKDB+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C65C1924C43100C08402 /* LKDB+Mapping.m */; };
+		B032C6671924C43100C08402 /* LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C65E1924C43100C08402 /* LKDBHelper.m */; };
+		B032C6681924C43100C08402 /* LKDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6601924C43100C08402 /* LKDBUtils.m */; };
+		B032C6691924C43100C08402 /* NSObject+LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6621924C43100C08402 /* NSObject+LKDBHelper.m */; };
+		B032C66A1924C43100C08402 /* NSObject+LKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6641924C43100C08402 /* NSObject+LKModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +149,34 @@
 		B026895E191F83D90005CE52 /* AirconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AirconViewController.h; path = view/AirconViewController.h; sourceTree = "<group>"; };
 		B026895F191F83DA0005CE52 /* AirconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AirconViewController.m; path = view/AirconViewController.m; sourceTree = "<group>"; };
 		B0268960191F83DA0005CE52 /* AirconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AirconViewController.xib; path = view/AirconViewController.xib; sourceTree = "<group>"; };
+		B032C63C1924A36100C08402 /* TurnOFFImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TurnOFFImage1.png; sourceTree = "<group>"; };
+		B032C63E1924C34F00C08402 /* RoomsAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsAddViewController.h; path = view/RoomsAddViewController.h; sourceTree = "<group>"; };
+		B032C63F1924C34F00C08402 /* RoomsAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsAddViewController.m; path = view/RoomsAddViewController.m; sourceTree = "<group>"; };
+		B032C6401924C34F00C08402 /* RoomsAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomsAddViewController.xib; path = view/RoomsAddViewController.xib; sourceTree = "<group>"; };
+		B032C6451924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		B032C6461924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		B032C6481924C42400C08402 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		B032C6491924C42400C08402 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		B032C64A1924C42400C08402 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		B032C64B1924C42400C08402 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		B032C64C1924C42400C08402 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		B032C64D1924C42400C08402 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		B032C64E1924C42400C08402 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		B032C64F1924C42400C08402 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		B032C6501924C42400C08402 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		B032C6511924C42400C08402 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		B032C6591924C43100C08402 /* LKDB+Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKDB+Manager.h"; sourceTree = "<group>"; };
+		B032C65A1924C43100C08402 /* LKDB+Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKDB+Manager.m"; sourceTree = "<group>"; };
+		B032C65B1924C43100C08402 /* LKDB+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LKDB+Mapping.h"; sourceTree = "<group>"; };
+		B032C65C1924C43100C08402 /* LKDB+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LKDB+Mapping.m"; sourceTree = "<group>"; };
+		B032C65D1924C43100C08402 /* LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBHelper.h; sourceTree = "<group>"; };
+		B032C65E1924C43100C08402 /* LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBHelper.m; sourceTree = "<group>"; };
+		B032C65F1924C43100C08402 /* LKDBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBUtils.h; sourceTree = "<group>"; };
+		B032C6601924C43100C08402 /* LKDBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBUtils.m; sourceTree = "<group>"; };
+		B032C6611924C43100C08402 /* NSObject+LKDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKDBHelper.h"; sourceTree = "<group>"; };
+		B032C6621924C43100C08402 /* NSObject+LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKDBHelper.m"; sourceTree = "<group>"; };
+		B032C6631924C43100C08402 /* NSObject+LKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKModel.h"; sourceTree = "<group>"; };
+		B032C6641924C43100C08402 /* NSObject+LKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +228,6 @@
 				B02688F3191F78500005CE52 /* data */,
 				B02688F5191F78630005CE52 /* logic */,
 				B02688C1191F77460005CE52 /* Supporting Files */,
-				B0268963191F8AC00005CE52 /* xViewController.h */,
-				B0268964191F8AC00005CE52 /* xViewController.m */,
 			);
 			path = XHomeDemo;
 			sourceTree = "<group>";
@@ -194,10 +235,10 @@
 		B02688C1191F77460005CE52 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B02688F9191F78DE0005CE52 /* images */,
 				B02688CC191F77470005CE52 /* Main_iPhone.storyboard */,
 				B02688CF191F77470005CE52 /* Main_iPad.storyboard */,
 				B02688D5191F77470005CE52 /* Images.xcassets */,
-				B02688F9191F78DE0005CE52 /* images */,
 				B02688C2191F77460005CE52 /* XHomeDemo-Info.plist */,
 				B02688C3191F77460005CE52 /* InfoPlist.strings */,
 				B02688C6191F77460005CE52 /* main.m */,
@@ -219,6 +260,7 @@
 		B02688F4191F785B0005CE52 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				B032C63C1924A36100C08402 /* TurnOFFImage1.png */,
 				B02688FE191F7DA80005CE52 /* AppDelegate.h */,
 				B02688FF191F7DA80005CE52 /* AppDelegate.m */,
 				B0268900191F7DA80005CE52 /* ViewController.h */,
@@ -226,6 +268,9 @@
 				B0268931191F80770005CE52 /* RoomsViewController.h */,
 				B0268932191F80770005CE52 /* RoomsViewController.m */,
 				B0268933191F80770005CE52 /* RoomsViewController.xib */,
+				B032C63E1924C34F00C08402 /* RoomsAddViewController.h */,
+				B032C63F1924C34F00C08402 /* RoomsAddViewController.m */,
+				B032C6401924C34F00C08402 /* RoomsAddViewController.xib */,
 				B0268936191F80D80005CE52 /* ScenaryViewController.h */,
 				B0268937191F80D80005CE52 /* ScenaryViewController.m */,
 				B0268938191F80D80005CE52 /* ScenaryViewController.xib */,
@@ -305,6 +350,8 @@
 		B02688F8191F78B60005CE52 /* db */ = {
 			isa = PBXGroup;
 			children = (
+				B032C6581924C43100C08402 /* Helper */,
+				B032C6431924C42400C08402 /* FMDB */,
 				B02688FA191F79670005CE52 /* deviceTable.h */,
 				B02688FB191F79670005CE52 /* deviceTable.m */,
 				B0268904191F7DE70005CE52 /* scenaryTable.h */,
@@ -322,6 +369,62 @@
 			children = (
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		B032C6431924C42400C08402 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				B032C6441924C42400C08402 /* extra */,
+				B032C6471924C42400C08402 /* src */,
+			);
+			name = FMDB;
+			path = data/db/FMDB;
+			sourceTree = "<group>";
+		};
+		B032C6441924C42400C08402 /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				B032C6451924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.h */,
+				B032C6461924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.m */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		B032C6471924C42400C08402 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B032C6481924C42400C08402 /* FMDatabase.h */,
+				B032C6491924C42400C08402 /* FMDatabase.m */,
+				B032C64A1924C42400C08402 /* FMDatabaseAdditions.h */,
+				B032C64B1924C42400C08402 /* FMDatabaseAdditions.m */,
+				B032C64C1924C42400C08402 /* FMDatabasePool.h */,
+				B032C64D1924C42400C08402 /* FMDatabasePool.m */,
+				B032C64E1924C42400C08402 /* FMDatabaseQueue.h */,
+				B032C64F1924C42400C08402 /* FMDatabaseQueue.m */,
+				B032C6501924C42400C08402 /* FMResultSet.h */,
+				B032C6511924C42400C08402 /* FMResultSet.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		B032C6581924C43100C08402 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B032C6591924C43100C08402 /* LKDB+Manager.h */,
+				B032C65A1924C43100C08402 /* LKDB+Manager.m */,
+				B032C65B1924C43100C08402 /* LKDB+Mapping.h */,
+				B032C65C1924C43100C08402 /* LKDB+Mapping.m */,
+				B032C65D1924C43100C08402 /* LKDBHelper.h */,
+				B032C65E1924C43100C08402 /* LKDBHelper.m */,
+				B032C65F1924C43100C08402 /* LKDBUtils.h */,
+				B032C6601924C43100C08402 /* LKDBUtils.m */,
+				B032C6611924C43100C08402 /* NSObject+LKDBHelper.h */,
+				B032C6621924C43100C08402 /* NSObject+LKDBHelper.m */,
+				B032C6631924C43100C08402 /* NSObject+LKModel.h */,
+				B032C6641924C43100C08402 /* NSObject+LKModel.m */,
+			);
+			name = Helper;
+			path = data/db/Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +481,8 @@
 			files = (
 				B0268962191F83DA0005CE52 /* AirconViewController.xib in Resources */,
 				B026895D191F83850005CE52 /* SocViewController.xib in Resources */,
+				B032C63D1924A36100C08402 /* TurnOFFImage1.png in Resources */,
+				B032C6421924C34F00C08402 /* RoomsAddViewController.xib in Resources */,
 				B0268944191F82D50005CE52 /* AddDevViewController.xib in Resources */,
 				B0268953191F834B0005CE52 /* CurtainViewController.xib in Resources */,
 				B026893A191F80D80005CE52 /* ScenaryViewController.xib in Resources */,
@@ -400,24 +505,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B032C6671924C43100C08402 /* LKDBHelper.m in Sources */,
 				B0268948191F82FE0005CE52 /* LampViewController.m in Sources */,
 				B026891E191F7EF80005CE52 /* scenary.m in Sources */,
 				B0268943191F82D50005CE52 /* AddDevViewController.m in Sources */,
+				B032C6661924C43100C08402 /* LKDB+Mapping.m in Sources */,
 				B0268912191F7E920005CE52 /* roomSource.m in Sources */,
 				B0268939191F80D80005CE52 /* ScenaryViewController.m in Sources */,
+				B032C6411924C34F00C08402 /* RoomsAddViewController.m in Sources */,
+				B032C6571924C42400C08402 /* FMResultSet.m in Sources */,
 				B026892D191F7F710005CE52 /* scenaryMgr.m in Sources */,
+				B032C6651924C43100C08402 /* LKDB+Manager.m in Sources */,
 				B0268924191F7F2F0005CE52 /* device.m in Sources */,
+				B032C66A1924C43100C08402 /* NSObject+LKModel.m in Sources */,
 				B0268952191F834B0005CE52 /* CurtainViewController.m in Sources */,
 				B0268918191F7EBD0005CE52 /* commandSource.m in Sources */,
+				B032C6561924C42400C08402 /* FMDatabaseQueue.m in Sources */,
 				B026891B191F7EDF0005CE52 /* room.m in Sources */,
 				B0268930191F7F880005CE52 /* commandMgr.m in Sources */,
 				B0268957191F83610005CE52 /* TVViewController.m in Sources */,
 				B0268934191F80770005CE52 /* RoomsViewController.m in Sources */,
 				B026892A191F7F5F0005CE52 /* roomMgr.m in Sources */,
+				B032C6681924C43100C08402 /* LKDBUtils.m in Sources */,
+				B032C6531924C42400C08402 /* FMDatabase.m in Sources */,
 				B026890C191F7E2C0005CE52 /* commandTable.m in Sources */,
 				B0268903191F7DA80005CE52 /* ViewController.m in Sources */,
 				B026894D191F832D0005CE52 /* WebcamViewController.m in Sources */,
 				B026890F191F7E740005CE52 /* deviceSource.m in Sources */,
+				B032C6521924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				B0268921191F7F0E0005CE52 /* command.m in Sources */,
 				B0268961191F83DA0005CE52 /* AirconViewController.m in Sources */,
 				B02688FC191F79670005CE52 /* deviceTable.m in Sources */,
@@ -426,9 +541,12 @@
 				B026895C191F83850005CE52 /* SocViewController.m in Sources */,
 				B0268927191F7F4E0005CE52 /* deviceMgr.m in Sources */,
 				B0268909191F7DFC0005CE52 /* roomTable.m in Sources */,
+				B032C6541924C42400C08402 /* FMDatabaseAdditions.m in Sources */,
 				B026893E191F82A40005CE52 /* SetViewController.m in Sources */,
 				B02688C7191F77460005CE52 /* main.m in Sources */,
 				B0268902191F7DA80005CE52 /* AppDelegate.m in Sources */,
+				B032C6691924C43100C08402 /* NSObject+LKDBHelper.m in Sources */,
+				B032C6551924C42400C08402 /* FMDatabasePool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +596,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xing zhao (TBB7PP4HL9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xing zhao (TBB7PP4HL9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -494,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -517,7 +636,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xing zhao (TBB7PP4HL9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xing zhao (TBB7PP4HL9)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -527,7 +647,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -539,9 +659,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xing zhao (TBB7PP4HL9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHomeDemo/XHomeDemo-Prefix.pch";
 				INFOPLIST_FILE = "XHomeDemo/XHomeDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -552,9 +674,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: xing zhao (TBB7PP4HL9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XHomeDemo/XHomeDemo-Prefix.pch";
 				INFOPLIST_FILE = "XHomeDemo/XHomeDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

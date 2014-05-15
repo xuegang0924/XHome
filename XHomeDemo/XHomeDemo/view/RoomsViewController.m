@@ -27,7 +27,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //TODO:1.查询数据库 得到 Room 条目
+    
+    //TODO:2.将查询到的条目 以按钮的形式添加到view中
+    
 }
+
+- (void)btnClk:(id)sender
+{
+    //TODO:3.识别相应的按钮操作
+}
+
+- (void)btnClkAddNew:(id)sender
+{
+    //TODO:4.跳转到添加ViewCtr
+}
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

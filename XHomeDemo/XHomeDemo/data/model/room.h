@@ -10,4 +10,7 @@
 
 @interface room : NSObject
 
+//room 的属性
+@property(copy,nonatomic)NSString *roomName;
+
 @end
