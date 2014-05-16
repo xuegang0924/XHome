@@ -80,17 +80,17 @@
 //列属性
 +(void)columnAttributeWithProperty:(LKDBProperty *)property
 {
-    //    if([property.sqlColumnName isEqualToString:@"MyAge"])
-    //    {
-    //        property.defaultValue = @"15";
-    //    }
-    //    else if([property.propertyName isEqualToString:@"date"])
-    //    {
-    //        // if you use unique,this property will also become the primary key
-    //        //        property.isUnique = YES;
-    //        property.checkValue = @"MyDate > '2000-01-01 00:00:00'";
-    //        property.length = 30;
-    //    }
+//    if([property.sqlColumnName isEqualToString:@"MyAge"])
+//    {
+//        property.defaultValue = @"15";
+//    }
+//    else if([property.propertyName isEqualToString:@"date"])
+//    {
+//        // if you use unique,this property will also become the primary key
+//        //        property.isUnique = YES;
+//        property.checkValue = @"MyDate > '2000-01-01 00:00:00'";
+//        property.length = 30;
+//    }
 }
 
 //手动or自动 绑定sql列
@@ -125,7 +125,7 @@
 //表名
 +(NSString *)getTableName
 {
-    return @"LKTestTable";
+    return @"roomTable";
 }
 
 //表版本

@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "roomTable.h"
+
 
 @interface roomModel : NSObject
+
+@property(strong,nonatomic)NSMutableArray *roomMArry;//所有房间
+@property(strong,nonatomic)LKDBHelper *dbHelper;
 
 @end
