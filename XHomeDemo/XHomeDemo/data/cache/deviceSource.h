@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface deviceSource : NSObject
-
+@property(strong,nonatomic)NSMutableArray *devicesCache;
 @end

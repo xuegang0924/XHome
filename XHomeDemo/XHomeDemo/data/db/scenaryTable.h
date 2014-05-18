@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LKDBHelper.h"
+
 
 @interface scenaryTable : NSObject
+
+//属性
+@property(copy,nonatomic)NSString *scenaryName;
 
 @end

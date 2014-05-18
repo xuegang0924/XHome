@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LKDBHelper.h"
+#include "roomTable.h"
 
 @interface deviceTable : NSObject
+//属性
+@property(copy,nonatomic)NSString *deviceName;
+@property(strong,nonatomic)roomTable *roomTableID;
 
 @end

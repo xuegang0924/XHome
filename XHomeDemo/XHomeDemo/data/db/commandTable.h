@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LKDBHelper.h"
+#import "deviceTable.h"
 
 @interface commandTable : NSObject
+
+//属性
+@property(copy,nonatomic)NSString *commandCode;
+@property(strong,nonatomic)deviceTable *deviceTableID;
+
 
 @end

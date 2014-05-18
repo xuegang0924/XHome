@@ -10,4 +10,11 @@
 
 @implementation deviceSource
 
+//加载数据库中的设备
+- (void) initDevices
+{
+    devicesCache = 
+}
+
+
 @end
