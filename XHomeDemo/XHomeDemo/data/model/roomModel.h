@@ -15,4 +15,10 @@
 @property(strong,nonatomic)NSMutableArray *roomMArry;//所有房间
 @property(strong,nonatomic)LKDBHelper *dbHelper;
 
+
+-(NSMutableArray *)getRoomMArry;
+
+//添加一个新房间
+-(BOOL)addNewRoom:(NSString *)newRoomName;
+
 @end

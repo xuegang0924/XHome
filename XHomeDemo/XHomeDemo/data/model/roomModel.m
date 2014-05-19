@@ -20,6 +20,7 @@
         //创建表  会根据表的版本号  来判断具体的操作 . create table need to manually call
         [self.dbHelper createTableWithModelClass:[roomTable class]];
         
+        NSLog(@"roomModel init");
         
     }
     return self;
@@ -27,24 +28,27 @@
 
 
 //得到总房间
--(void)getRoomMArry
+-(NSMutableArray *)getRoomMArry
 {
-//    self.roomMArry =
+
+    
     //异步搜索 所有的元素到数组中。
     [self.dbHelper search:[roomTable class] where:nil orderBy:nil offset:0 count:0 callback:^(NSMutableArray *array) {
-        self.roomMArry = array;
-        for (NSObject* obj in self.roomMArry) {
+//        self.roomMArry = array;
+        for (NSObject* obj in array) {
             [obj printAllPropertys];
         }
     }];
-    
+    self.roomMArry = [self.dbHelper search:[roomTable class] column:nil where:nil orderBy:nil offset:0 count:0];
+    return  self.roomMArry;
 }
 
 //添加一个新房间
--(BOOL)addNewRoom:(roomTable *)newRoom
+-(BOOL)addNewRoom:(NSString *)newRoomName
 {
-    
-    return [self.dbHelper insertWhenNotExists:newRoom];    
+    roomTable *addRoom = [[roomTable alloc] init];
+    addRoom.roomName = newRoomName;
+    return [self.dbHelper insertWhenNotExists:addRoom];
     return NO;
 }
 

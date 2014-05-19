@@ -10,6 +10,8 @@
 
 @implementation roomTable
 
+@synthesize roomName;
+
 
 //在类 初始化的时候
 +(void)initialize
@@ -41,6 +43,7 @@
 +(BOOL)dbWillInsert:(NSObject *)entity
 {
     LKErrorLog(@"will insert : %@",NSStringFromClass(self));
+    LKErrorLog(@"testlog");
     return YES;
 }
 

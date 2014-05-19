@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "roomSource.h"
 
 @interface roomMgr : NSObject
+
+@property(strong,nonatomic)roomSource *roomSrc;
+@property(strong,nonatomic)NSMutableArray *roomsArry;
+
+/**
+ *加载数据库中的房间条目
+ */
+- (void)initRooms;
+
+/**
+ *新增一个房间条目
+ */
+- (BOOL)addNewRoom:(NSString *)newRoomName;
 
 @end

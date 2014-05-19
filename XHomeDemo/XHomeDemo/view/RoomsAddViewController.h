@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "roomMgr.h"
 
 @interface RoomsAddViewController : UIViewController
+
+@property(strong,nonatomic) IBOutlet UITextField *tfNewRoomName;
+@property(strong,nonatomic)roomMgr *roomCtr;
 
 @end

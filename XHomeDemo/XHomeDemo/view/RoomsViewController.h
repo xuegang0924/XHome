@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomsAddViewController.h"
+#import "roomMgr.h"
 
 @interface RoomsViewController : UIViewController
+
+@property(strong,nonatomic)roomMgr *roomCtr;
 
 @end

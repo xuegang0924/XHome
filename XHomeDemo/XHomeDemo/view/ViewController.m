@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.title = @"XHome";
+    
     UIButton *roomBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     roomBtn.frame = CGRectMake(0, 100, 100, 40);
     [roomBtn setTitle:@"Rooms" forState:UIControlStateNormal];
