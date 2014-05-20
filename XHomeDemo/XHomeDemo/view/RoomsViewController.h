@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RoomsAddViewController.h"
 #import "roomMgr.h"
+#import "ButtonTagDef.h"
+
 
 @interface RoomsViewController : UIViewController
 

@@ -21,4 +21,10 @@
 //添加一个新房间
 -(BOOL)addNewRoom:(NSString *)newRoomName;
 
+//更新一个房间
+-(BOOL)updateARoom:(NSString *)RoomName;
+
+//删除一个房间
+-(BOOL)deleteARoom:(NSString *)RoomName;
+
 @end

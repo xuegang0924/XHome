@@ -179,6 +179,7 @@
 		B0850F71192605630047419F /* commandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = commandModel.m; path = data/model/commandModel.m; sourceTree = "<group>"; };
 		B0850F731926057A0047419F /* scenaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scenaryModel.h; path = data/model/scenaryModel.h; sourceTree = "<group>"; };
 		B0850F741926057A0047419F /* scenaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = scenaryModel.m; path = data/model/scenaryModel.m; sourceTree = "<group>"; };
+		B090E231192B30B200934BFB /* ButtonTagDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonTagDef.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +250,7 @@
 				B02688C3191F77460005CE52 /* InfoPlist.strings */,
 				B02688C6191F77460005CE52 /* main.m */,
 				B02688C8191F77460005CE52 /* XHomeDemo-Prefix.pch */,
+				B090E231192B30B200934BFB /* ButtonTagDef.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

@@ -40,4 +40,20 @@
     return [_roomSrc addRoom:newRoomName];
 }
 
+/**
+ *更新一个房间条目
+ */
+- (BOOL)updateRoom:(NSString *)RoomName
+{
+    return [_roomSrc updateRoom:RoomName];
+}
+
+/**
+ *删除一个房间条目
+ */
+- (BOOL)deleteRoom:(NSString *)RoomName
+{
+    return [_roomSrc deleteRoom:RoomName];
+}
+
 @end

@@ -36,4 +36,23 @@
 {
     return [_roomMd addNewRoom:newRoomName];
 }
+
+
+/**
+ *更新一个房间条目
+ */
+- (BOOL)updateRoom:(NSString *)RoomName
+{
+     return [_roomMd updateARoom:RoomName];
+}
+
+/**
+ *删除一个房间条目
+ */
+- (BOOL)deleteRoom:(NSString *)RoomName
+{
+     return [_roomMd deleteARoom:RoomName];
+}
+
+
 @end

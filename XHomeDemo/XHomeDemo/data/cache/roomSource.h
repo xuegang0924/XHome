@@ -24,4 +24,14 @@
  */
 - (BOOL)addRoom:(NSString *)newRoomName;
 
+
+/**
+ *更新一个房间条目
+ */
+- (BOOL)updateRoom:(NSString *)RoomName;
+
+/**
+ *删除一个房间条目
+ */
+- (BOOL)deleteRoom:(NSString *)RoomName;
 @end

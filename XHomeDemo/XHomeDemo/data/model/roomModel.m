@@ -33,12 +33,12 @@
 
     
     //异步搜索 所有的元素到数组中。
-    [self.dbHelper search:[roomTable class] where:nil orderBy:nil offset:0 count:0 callback:^(NSMutableArray *array) {
-//        self.roomMArry = array;
-        for (NSObject* obj in array) {
-            [obj printAllPropertys];
-        }
-    }];
+//    [self.dbHelper search:[roomTable class] where:nil orderBy:nil offset:0 count:0 callback:^(NSMutableArray *array) {
+////        self.roomMArry = array;
+//        for (NSObject* obj in array) {
+//            [obj printAllPropertys];
+//        }
+//    }];
     self.roomMArry = [self.dbHelper search:[roomTable class] column:nil where:nil orderBy:nil offset:0 count:0];
     return  self.roomMArry;
 }
@@ -49,23 +49,23 @@
     roomTable *addRoom = [[roomTable alloc] init];
     addRoom.roomName = newRoomName;
     return [self.dbHelper insertWhenNotExists:addRoom];
-    return NO;
-}
-
-//删除一个房间
--(BOOL)deleteRoom:(roomTable *)deleteRoom
-{
-    
-    return [self.dbHelper deleteToDB:deleteRoom];
-    return NO;
 }
 
 //更新一个房间
--(BOOL)updateRoom:(roomTable *)updateRoom
+-(BOOL)updateARoom:(NSString *)RoomName
 {
+    roomTable *updateRoom = [[roomTable alloc] init];
+    updateRoom.roomName = RoomName;
     return [self.dbHelper updateToDB:updateRoom where:@"nil"];
-    return NO;
 }
 
+
+//删除一个房间
+-(BOOL)deleteARoom:(NSString *)RoomName
+{
+    roomTable *deleteRoom = [[roomTable alloc] init];
+    deleteRoom.roomName = RoomName;
+    return [self.dbHelper deleteToDB:deleteRoom];
+}
 
 @end
