@@ -52,11 +52,14 @@
 }
 
 //更新一个房间
--(BOOL)updateARoom:(NSString *)RoomName
+-(BOOL)updateARoom:(NSString *)newRoomName withOldRoomName:(NSString *)oldRoomName
 {
+    NSString *sql = [[NSString alloc] initWithFormat:@"roomName='%@'",oldRoomName];
     roomTable *updateRoom = [[roomTable alloc] init];
-    updateRoom.roomName = RoomName;
-    return [self.dbHelper updateToDB:updateRoom where:@"nil"];
+    updateRoom.roomName = newRoomName;
+    int ret = [self.dbHelper updateToDB:updateRoom where:sql];
+    
+    return  ret;
 }
 
 

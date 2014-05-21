@@ -27,7 +27,7 @@
 /**
  *更新一个房间条目
  */
-- (BOOL)updateRoom:(NSString *)RoomName;
+- (BOOL)updateRoom:(NSString *)newRoomName withOldRoomName:(NSString *)oldRoomName;
 
 /**
  *删除一个房间条目

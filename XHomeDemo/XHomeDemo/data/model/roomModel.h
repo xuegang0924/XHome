@@ -22,7 +22,7 @@
 -(BOOL)addNewRoom:(NSString *)newRoomName;
 
 //更新一个房间
--(BOOL)updateARoom:(NSString *)RoomName;
+-(BOOL)updateARoom:(NSString *)newRoomName withOldRoomName:(NSString *)oldRoomName;
 
 //删除一个房间
 -(BOOL)deleteARoom:(NSString *)RoomName;

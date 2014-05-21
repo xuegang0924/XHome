@@ -60,37 +60,9 @@
     }
 }
 
-- (IBAction)updateRoom:(id)sender
-{
-    if (tfNewRoomName.text.length != 0 ) {
-        BOOL isOK = [roomCtr updateRoom:tfNewRoomName.text];
-        if (isOK) {
-            //            [[[UIAlertView alloc] initWithTitle:@"成功" message:@"成功添加！"  delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
-            [self.navigationController popViewControllerAnimated:YES];
-            
-        }else {
-            [[[UIAlertView alloc] initWithTitle:@"失败" message:@"房间名重复，请更换房间名重新输入！"  delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
-        }
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"错误" message:@"请输入房间名"  delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
-    }
-}
 
-- (IBAction)deleteRoom:(id)sender
-{
-    if (tfNewRoomName.text.length != 0 ) {
-        BOOL isOK = [roomCtr deleteRoom:tfNewRoomName.text];
-        if (isOK) {
-            //            [[[UIAlertView alloc] initWithTitle:@"成功" message:@"成功添加！"  delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
-            [self.navigationController popViewControllerAnimated:YES];
-            
-        }else {
-            [[[UIAlertView alloc] initWithTitle:@"失败" message:@"没有此房间，请更换房间名重新输入！"  delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
-        }
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"错误" message:@"请输入房间名"  delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
-    }
-}
+
+
 
 - (void)didReceiveMemoryWarning
 {

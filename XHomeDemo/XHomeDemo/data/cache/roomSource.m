@@ -41,9 +41,9 @@
 /**
  *更新一个房间条目
  */
-- (BOOL)updateRoom:(NSString *)RoomName
+- (BOOL)updateRoom:(NSString *)newRoomName withOldRoomName:(NSString *)oldRoomName
 {
-     return [_roomMd updateARoom:RoomName];
+     return [_roomMd updateARoom:newRoomName withOldRoomName:oldRoomName];
 }
 
 /**
