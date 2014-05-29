@@ -11,6 +11,8 @@
 
 #define ROOMS_BUTTON_TAG        10000
 #define SCENARY_BUTTON_TAG      20000
+#define DEVICE_BUTTON_TAG       25000
+#define ADDNEWDEV_BUTTON_TAG    (DEVICE_BUTTON_TAG + 1000)
 #define AIRCON_BUTTON_TAG       30000
 #define SOC_BUTTON_TAG          40000
 #define TV_BUTTON_TAG           50000
@@ -22,7 +24,10 @@
 #define ADDNEWROOM_BUTTON_TAG   (OTHER_BUTTON_TAG + 2)
 
 
-#define ALERT_VIEW_TAG          100000
+#define ALERT_VIEW_TAG          1000
 #define ALERT_VIEW_UPDATE       (ALERT_VIEW_TAG + 1)
 #define ALERT_VIEW_BTN_LONG_PRESS   (ALERT_VIEW_TAG +2)
+#define ALERT_VIEW_ADDDEV       (ALERT_VIEW_TAG + 3)
+
+
 #endif

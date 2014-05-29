@@ -52,141 +52,6 @@
     
 }
 
-- (void)updateView:(roomMgr *)rmCtr
-{
-    //清空view中的东西
-    //获取此view中所有的子view
-    NSArray *subViews = [[NSArray alloc] initWithArray:[self.view subviews]];
-    //从view中删除
-    for (UIView *subv in subViews) {
-//        NSArray *subViewArry = [[NSArray alloc] initWithArray:[subv subviews]];
-//        for (UIView *sv in subViewArry) {
-//            [sv removeFromSuperview];
-//        }
-        [subv removeFromSuperview];
-    }
-	
-    //添加一个scrollView
-    UIScrollView *scrv = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    scrv.contentSize = CGSizeMake(scrv.bounds.size.width, scrv.bounds.size.height * 20);
-    [self.view addSubview:scrv];
-    
-    //TODO:2.将查询到的条目 以按钮的形式添加到view中
-#define SQUARE_SIDE_LONGTH (scrv.bounds.size.width / 2 - 5 - 10) //一个正方形边长
-#define ONE_PAGE_HEIGHT ((SQUARE_SIDE_LONGTH + 10) * 4) //一页的高
-    BOOL gotoFlag = YES;
-    int count = 0;
-    for (NSObject *obj in rmCtr.roomsArry) {
-        
-        roomTable *rt = (roomTable *)obj;
-        NSLog(@"%@",rt.roomName);
-        
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-       
-        btn.tag = ROOMS_BUTTON_TAG + count;
-        [btn setTitle:rt.roomName forState:UIControlStateNormal];
-        
-        if (!gotoFlag) {
-            btn.tag = ADDNEWROOM_BUTTON_TAG;
-            [btn setTitle:@"添加新房间" forState:UIControlStateNormal];
-        }
-        
-        btn.titleLabel.font = [UIFont systemFontOfSize:20.0];
-        CGFloat r = arc4random() % 100 / 100.0 ;
-        CGFloat g = arc4random() % 100 / 100.0 ;
-        CGFloat b = arc4random() % 100 / 100.0 ;
-        [btn setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:1.0]];
-//        [btn setTitleColor:[UIColor colorWithRed:1.0-r green:1.0-g blue:1.0-b alpha:1.0] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        int btnTypeNum = (count+1) % 10;
-        switch (btnTypeNum) {
-//                      group 1
-//                 --------    --------
-//                |        |  |        |
-//                |   1    |  |    2   |
-//                |        |  |        |
-//                 --------    --------
-            case 1:
-                btn.frame = CGRectMake(10, count/10*ONE_PAGE_HEIGHT + 10, SQUARE_SIDE_LONGTH, SQUARE_SIDE_LONGTH);
-                break;
-            case 2:
-                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH + 20 , count/10*ONE_PAGE_HEIGHT + 10, SQUARE_SIDE_LONGTH, SQUARE_SIDE_LONGTH);
-                break;
-                
-//                          group 2
-//                 ------------    -----
-//                |      3     |  |     |
-//                 ------------   |     |
-//                 ------------   |  5  |
-//                |      4     |  |     |
-//                 ------------    -----
-            case 3:
-                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 1*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
-                break;
-            case 4:
-                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 1*(SQUARE_SIDE_LONGTH + 10) + 10  + SQUARE_SIDE_LONGTH / 2 + 5, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
-                break;
-            case 5:
-                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH * 4 / 3 + 20 , count/10*ONE_PAGE_HEIGHT + 1*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 2 / 3, SQUARE_SIDE_LONGTH);
-                break;
-
-//                          group 3
-//                  -----    ------------
-//                 |     |  |      7     |
-//                 |     |   ------------
-//                 |  6  |   ------------
-//                 |     |  |      8     |
-//                  -----    ------------
-            case 6:
-                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 2*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 2 / 3, SQUARE_SIDE_LONGTH);
-                break;
-            case 7:
-                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH * 2 / 3 + 20 , count/10*ONE_PAGE_HEIGHT + 2*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
-                break;
-            case 8:
-                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH * 2 / 3 + 20 , count/10*ONE_PAGE_HEIGHT + 2*(SQUARE_SIDE_LONGTH + 10) + 10  + SQUARE_SIDE_LONGTH / 2 + 5, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
-                break;
-                
-//                         group 4
-//                   ----------------------
-//                  |          9           |
-//                   ----------------------
-//                   ----------------------
-//                  |          0           |
-//                   ----------------------
-            case 9:
-                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 3*(SQUARE_SIDE_LONGTH + 10) + 10, (SQUARE_SIDE_LONGTH + 5) * 2, SQUARE_SIDE_LONGTH / 2 - 5);
-                break;
-            case 0:
-                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 3*(SQUARE_SIDE_LONGTH + 10) + 10  + SQUARE_SIDE_LONGTH / 2 + 5, (SQUARE_SIDE_LONGTH + 5) * 2, SQUARE_SIDE_LONGTH / 2 - 5);
-                break;
-            default:
-                btn.frame = CGRectMake(10, count * 50 + 500, 100, 40);
-                break;
-        }
-        
-        //        btn.frame = CGRectMake(10, count * 50 + 10, 100, 40);
-        if (btn.frame.origin.y + btn.frame.size.height + 10 >= scrv.contentSize.height) {
-            scrv.contentSize = CGSizeMake(scrv.bounds.size.width, btn.frame.origin.y + btn.frame.size.height + 10);
-        }
-        scrv.contentSize = CGSizeMake(scrv.bounds.size.width, btn.frame.origin.y + btn.frame.size.height + SQUARE_SIDE_LONGTH);
-        [btn addTarget:self action:@selector(btnClk:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        //添加长按 事件 时间
-        UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnLongClik:)];
-        [lpgr setMinimumPressDuration:0.8];
-        
-        [btn addGestureRecognizer:lpgr];
-        [scrv addSubview:btn];
-
-        count++;
-        
-    }
-    
-}
-
-
 - (void)btnClk:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
@@ -204,6 +69,8 @@
     } else {      //TODO:3.识别相应的按钮操作
         RoomsDetailViewController *rdvc = [[RoomsDetailViewController alloc] init];
         rdvc.title = btn.titleLabel.text;
+//        rdvc.navigationController.title = rdvc.title;
+
         [self.navigationController pushViewController:rdvc animated:YES];        
     }
     
@@ -281,6 +148,134 @@
 }
 
 
+
+
+- (void)updateView:(roomMgr *)rmCtr
+{
+    //清空view中的东西
+    //获取此view中所有的子view
+    NSArray *subViews = [[NSArray alloc] initWithArray:[self.view subviews]];
+    //从view中删除
+    for (UIView *subv in subViews) {
+        //        NSArray *subViewArry = [[NSArray alloc] initWithArray:[subv subviews]];
+        //        for (UIView *sv in subViewArry) {
+        //            [sv removeFromSuperview];
+        //        }
+        [subv removeFromSuperview];
+    }
+	
+    //添加一个scrollView
+    UIScrollView *scrv = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    scrv.contentSize = CGSizeMake(scrv.bounds.size.width, scrv.bounds.size.height * 20);
+    [self.view addSubview:scrv];
+    
+    //TODO:2.将查询到的条目 以按钮的形式添加到view中
+#define SQUARE_SIDE_LONGTH ([[UIScreen mainScreen] bounds].size.width / 2 - 5 - 10) //一个正方形边长
+#define ONE_PAGE_HEIGHT ((SQUARE_SIDE_LONGTH + 10) * 4) //一页的高
+    int count = 0;
+    for (NSObject *obj in rmCtr.roomsArry) {
+        
+        roomTable *rt = (roomTable *)obj;
+        NSLog(@"%@",rt.roomName);
+        
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        
+        btn.tag = ROOMS_BUTTON_TAG + count;
+        [btn setTitle:rt.roomName forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:20.0];
+        CGFloat r = arc4random() % 100 / 100.0 ;
+        CGFloat g = arc4random() % 100 / 100.0 ;
+        CGFloat b = arc4random() % 100 / 100.0 ;
+        [btn setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:1.0]];
+        //        [btn setTitleColor:[UIColor colorWithRed:1.0-r green:1.0-g blue:1.0-b alpha:1.0] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        int btnTypeNum = (count+1) % 10;
+        switch (btnTypeNum) {
+                //                      group 1
+                //                 --------    --------
+                //                |        |  |        |
+                //                |   1    |  |    2   |
+                //                |        |  |        |
+                //                 --------    --------
+            case 1:
+                btn.frame = CGRectMake(10, count/10*ONE_PAGE_HEIGHT + 10, SQUARE_SIDE_LONGTH, SQUARE_SIDE_LONGTH);
+                break;
+            case 2:
+                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH + 20 , count/10*ONE_PAGE_HEIGHT + 10, SQUARE_SIDE_LONGTH, SQUARE_SIDE_LONGTH);
+                break;
+                
+                //                          group 2
+                //                 ------------    -----
+                //                |      3     |  |     |
+                //                 ------------   |     |
+                //                 ------------   |  5  |
+                //                |      4     |  |     |
+                //                 ------------    -----
+            case 3:
+                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 1*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
+                break;
+            case 4:
+                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 1*(SQUARE_SIDE_LONGTH + 10) + 10  + SQUARE_SIDE_LONGTH / 2 + 5, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
+                break;
+            case 5:
+                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH * 4 / 3 + 20 , count/10*ONE_PAGE_HEIGHT + 1*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 2 / 3, SQUARE_SIDE_LONGTH);
+                break;
+                
+                //                          group 3
+                //                  -----    ------------
+                //                 |     |  |      7     |
+                //                 |     |   ------------
+                //                 |  6  |   ------------
+                //                 |     |  |      8     |
+                //                  -----    ------------
+            case 6:
+                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 2*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 2 / 3, SQUARE_SIDE_LONGTH);
+                break;
+            case 7:
+                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH * 2 / 3 + 20 , count/10*ONE_PAGE_HEIGHT + 2*(SQUARE_SIDE_LONGTH + 10) + 10, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
+                break;
+            case 8:
+                btn.frame = CGRectMake(SQUARE_SIDE_LONGTH * 2 / 3 + 20 , count/10*ONE_PAGE_HEIGHT + 2*(SQUARE_SIDE_LONGTH + 10) + 10  + SQUARE_SIDE_LONGTH / 2 + 5, SQUARE_SIDE_LONGTH * 4 / 3, SQUARE_SIDE_LONGTH / 2 - 5);
+                break;
+                
+                //                         group 4
+                //                   ----------------------
+                //                  |          9           |
+                //                   ----------------------
+                //                   ----------------------
+                //                  |          0           |
+                //                   ----------------------
+            case 9:
+                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 3*(SQUARE_SIDE_LONGTH + 10) + 10, (SQUARE_SIDE_LONGTH + 5) * 2, SQUARE_SIDE_LONGTH / 2 - 5);
+                break;
+            case 0:
+                btn.frame = CGRectMake(10 , count/10*ONE_PAGE_HEIGHT + 3*(SQUARE_SIDE_LONGTH + 10) + 10  + SQUARE_SIDE_LONGTH / 2 + 5, (SQUARE_SIDE_LONGTH + 5) * 2, SQUARE_SIDE_LONGTH / 2 - 5);
+                break;
+            default:
+                btn.frame = CGRectMake(10, count * 50 + 500, 100, 40);
+                break;
+        }
+        
+        //        btn.frame = CGRectMake(10, count * 50 + 10, 100, 40);
+        //        if (btn.frame.origin.y + btn.frame.size.height + 10 >= scrv.contentSize.height) {
+        //            scrv.contentSize = CGSizeMake(scrv.bounds.size.width, btn.frame.origin.y + btn.frame.size.height + 10);
+        //        }
+        scrv.contentSize = CGSizeMake(scrv.bounds.size.width, btn.frame.origin.y + btn.frame.size.height + SQUARE_SIDE_LONGTH);
+        [btn addTarget:self action:@selector(btnClk:) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        //添加长按 事件 时间
+        UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnLongClik:)];
+        [lpgr setMinimumPressDuration:0.8];
+        
+        [btn addGestureRecognizer:lpgr];
+        [scrv addSubview:btn];
+        
+        count++;
+        
+    }
+    
+}
 
 
 

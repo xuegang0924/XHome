@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "deviceMgr.h"
 
 @interface RoomsDetailViewController : UIViewController
+
+@property(strong,nonatomic)deviceMgr *deviceCtr;
 
 @end

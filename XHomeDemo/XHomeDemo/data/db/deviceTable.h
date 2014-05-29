@@ -12,7 +12,11 @@
 
 @interface deviceTable : NSObject
 //属性
+@property(strong,nonatomic)NSString *roomDevName;
 @property(copy,nonatomic)NSString *deviceName;
-@property(strong,nonatomic)roomTable *roomTableID;
+
+
+//@property(strong,nonatomic)roomTable *roomTableID;
+@property(strong,nonatomic)NSString *roomID;
 
 @end

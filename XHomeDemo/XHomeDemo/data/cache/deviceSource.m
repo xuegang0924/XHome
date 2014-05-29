@@ -10,11 +10,51 @@
 
 @implementation deviceSource
 
-//加载数据库中的设备
-- (void) initDevices
+
+
+
+- (id)init
 {
-//    devicesCache = 
+    self = [super init];
+    if (self) {
+        _deviceMd = [[deviceModel alloc] init];
+        NSLog(@"deviceCache init");
+    }
+    return self;
 }
 
+/**
+ *加载数据库中的房间条目
+ */
+- (NSMutableArray *)loadDevices:(NSString *)whichRoomName
+{
+    
+    return  [_deviceMd getDeviceMArry:whichRoomName];
+}
+
+/**
+ *新增一个房间条目
+ */
+- (BOOL)addDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName
+{
+    return [_deviceMd addNewDevice:newDeviceName withRoomName:whichRoomName];
+}
+
+
+/**
+ *更新一个房间条目
+ */
+- (BOOL)updateDevice:(NSString *)newDeviceName withOldDeviceName:(NSString *)oldDeviceName withRoomName:(NSString *)whichRoomName
+{
+    return [_deviceMd updateADevice:newDeviceName withOldDeviceName:oldDeviceName withRoomName:whichRoomName];
+}
+
+/**
+ *删除一个房间条目
+ */
+- (BOOL)deleteDevice:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName
+{
+    return [_deviceMd deleteADevice:DeviceName withRoomName:whichRoomName];
+}
 
 @end

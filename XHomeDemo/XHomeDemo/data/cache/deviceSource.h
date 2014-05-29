@@ -7,7 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "deviceModel.h"
 
 @interface deviceSource : NSObject
-@property(strong,nonatomic)NSMutableArray *devicesCache;
+
+@property(strong,nonatomic)deviceModel *deviceMd;
+
+/**
+ *加载数据库中的房间条目
+ */
+- (NSMutableArray *)loadDevices:(NSString *)whichRoomName;
+
+
+/**
+ *新增一个房间条目
+ */
+- (BOOL)addDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName;
+
+
+/**
+ *更新一个房间条目
+ */
+- (BOOL)updateDevice:(NSString *)newDeviceName withOldDeviceName:(NSString *)oldDeviceName withRoomName:(NSString *)whichRoomName;
+
+/**
+ *删除一个房间条目
+ */
+- (BOOL)deleteDevice:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName;
 @end
