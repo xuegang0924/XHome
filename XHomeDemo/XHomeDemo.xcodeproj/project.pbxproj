@@ -81,6 +81,8 @@
 		B090E25B192B794100934BFB /* TurnOFFImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = B090E250192B794100934BFB /* TurnOFFImage1.png */; };
 		B0B8D64E192CBEC4009743B6 /* RoomsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8D64C192CBEC4009743B6 /* RoomsDetailViewController.m */; };
 		B0B8D64F192CBEC4009743B6 /* RoomsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B8D64D192CBEC4009743B6 /* RoomsDetailViewController.xib */; };
+		B0F6EE3A19387C3500A114E1 /* ScenaryAddCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6EE3819387C3500A114E1 /* ScenaryAddCommandViewController.m */; };
+		B0F6EE3B19387C3500A114E1 /* ScenaryAddCommandViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F6EE3919387C3500A114E1 /* ScenaryAddCommandViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +207,9 @@
 		B0B8D64B192CBEC4009743B6 /* RoomsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsDetailViewController.h; path = view/RoomsDetailViewController.h; sourceTree = "<group>"; };
 		B0B8D64C192CBEC4009743B6 /* RoomsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsDetailViewController.m; path = view/RoomsDetailViewController.m; sourceTree = "<group>"; };
 		B0B8D64D192CBEC4009743B6 /* RoomsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomsDetailViewController.xib; path = view/RoomsDetailViewController.xib; sourceTree = "<group>"; };
+		B0F6EE3719387C3500A114E1 /* ScenaryAddCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScenaryAddCommandViewController.h; path = view/ScenaryAddCommandViewController.h; sourceTree = "<group>"; };
+		B0F6EE3819387C3500A114E1 /* ScenaryAddCommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScenaryAddCommandViewController.m; path = view/ScenaryAddCommandViewController.m; sourceTree = "<group>"; };
+		B0F6EE3919387C3500A114E1 /* ScenaryAddCommandViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScenaryAddCommandViewController.xib; path = view/ScenaryAddCommandViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,13 +299,13 @@
 			children = (
 				B07217ED1929FBA8009C1EDF /* rootView */,
 				B07217EE1929FBC7009C1EDF /* roomsView */,
+				B07217EF1929FBE5009C1EDF /* scenaryView */,
 				B07217F51929FC5C009C1EDF /* airconView */,
 				B07217F41929FC50009C1EDF /* socView */,
 				B07217F31929FC44009C1EDF /* tvView */,
 				B07217F21929FC39009C1EDF /* curtainView */,
 				B07217F11929FC2E009C1EDF /* webcamView */,
 				B07217F01929FC1E009C1EDF /* lampView */,
-				B07217EF1929FBE5009C1EDF /* scenaryView */,
 				B07217F71929FCC8009C1EDF /* addView */,
 				B07217F61929FCC2009C1EDF /* setView */,
 			);
@@ -329,10 +334,10 @@
 				B0850F6B192605380047419F /* roomModel.m */,
 				B0850F6D192605510047419F /* deviceModel.h */,
 				B0850F6E192605510047419F /* deviceModel.m */,
-				B0850F70192605630047419F /* commandModel.h */,
-				B0850F71192605630047419F /* commandModel.m */,
 				B0850F731926057A0047419F /* scenaryModel.h */,
 				B0850F741926057A0047419F /* scenaryModel.m */,
+				B0850F70192605630047419F /* commandModel.h */,
+				B0850F71192605630047419F /* commandModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -466,6 +471,9 @@
 				B0268936191F80D80005CE52 /* ScenaryViewController.h */,
 				B0268937191F80D80005CE52 /* ScenaryViewController.m */,
 				B0268938191F80D80005CE52 /* ScenaryViewController.xib */,
+				B0F6EE3719387C3500A114E1 /* ScenaryAddCommandViewController.h */,
+				B0F6EE3819387C3500A114E1 /* ScenaryAddCommandViewController.m */,
+				B0F6EE3919387C3500A114E1 /* ScenaryAddCommandViewController.xib */,
 			);
 			name = scenaryView;
 			sourceTree = "<group>";
@@ -635,6 +643,7 @@
 				B0268944191F82D50005CE52 /* AddDevViewController.xib in Resources */,
 				B0268953191F834B0005CE52 /* CurtainViewController.xib in Resources */,
 				B090E254192B794100934BFB /* NEWLOGO -Highlight58.png in Resources */,
+				B0F6EE3B19387C3500A114E1 /* ScenaryAddCommandViewController.xib in Resources */,
 				B026893A191F80D80005CE52 /* ScenaryViewController.xib in Resources */,
 				B090E259192B794100934BFB /* NEWLOGO -Highlight156.png in Resources */,
 				B0268949191F82FE0005CE52 /* LampViewController.xib in Resources */,
@@ -668,6 +677,7 @@
 				B0268948191F82FE0005CE52 /* LampViewController.m in Sources */,
 				B0268943191F82D50005CE52 /* AddDevViewController.m in Sources */,
 				B0850F72192605630047419F /* commandModel.m in Sources */,
+				B0F6EE3A19387C3500A114E1 /* ScenaryAddCommandViewController.m in Sources */,
 				B032C6661924C43100C08402 /* LKDB+Mapping.m in Sources */,
 				B0268912191F7E920005CE52 /* roomSource.m in Sources */,
 				B0268939191F80D80005CE52 /* ScenaryViewController.m in Sources */,

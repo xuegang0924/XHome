@@ -177,6 +177,7 @@
     //添加一个scrollView
     UIScrollView *scrv = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     scrv.contentSize = CGSizeMake(scrv.bounds.size.width, scrv.bounds.size.height * 20);
+    scrv.backgroundColor = [UIColor blackColor];
     [self.view addSubview:scrv];
     
     //TODO:2.将查询到的条目 以按钮的形式添加到view中
@@ -194,9 +195,9 @@
         [btn setTitle:dt.deviceName forState:UIControlStateNormal];
         
         btn.titleLabel.font = [UIFont systemFontOfSize:20.0];
-        CGFloat r = arc4random() % 100 / 100.0 ;
-        CGFloat g = arc4random() % 100 / 100.0 ;
-        CGFloat b = arc4random() % 100 / 100.0 ;
+        CGFloat r = (arc4random() % 60 + 20) / 100.0 ;
+        CGFloat g = (arc4random() % 60 + 20) / 100.0 ;
+        CGFloat b = (arc4random() % 60 + 20) / 100.0 ;
         [btn setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:1.0]];
         //        [btn setTitleColor:[UIColor colorWithRed:1.0-r green:1.0-g blue:1.0-b alpha:1.0] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -302,4 +303,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 @end
