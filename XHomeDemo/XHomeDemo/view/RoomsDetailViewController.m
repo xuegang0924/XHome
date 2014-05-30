@@ -52,13 +52,14 @@
     //如果是添加设备按钮按下 弹出添加框
     if (sender.tag == ADDNEWDEV_BUTTON_TAG) {
         
-        UIAlertView *addDevAlertv=[[UIAlertView alloc] initWithTitle:@"添加新设备" message:@"请输入新的设备名称？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-        [addDevAlertv setAlertViewStyle:UIAlertViewStylePlainTextInput];
-        [[addDevAlertv textFieldAtIndex:0] setPlaceholder:@"请输入新的设备名称"];
-        addDevAlertv.tag = ALERT_VIEW_ADDDEV;
-        [addDevAlertv show];
+//        UIAlertView *addDevAlertv=[[UIAlertView alloc] initWithTitle:@"添加新设备" message:@"请输入新的设备名称？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//        [addDevAlertv setAlertViewStyle:UIAlertViewStylePlainTextInput];
+//        [[addDevAlertv textFieldAtIndex:0] setPlaceholder:@"请输入新的设备名称"];
+//        addDevAlertv.tag = ALERT_VIEW_ADDDEV;
+//        [addDevAlertv show];
+        RoomsAddDevViewController *radVc = [[RoomsAddDevViewController alloc] init];
+        [self.navigationController pushViewController:radVc animated:YES];
     }
-    NSLog(@"lll");
 
 }
 
@@ -86,7 +87,7 @@
             NSLog(@"quxiao");
         } else if (buttonIndex == 1) {
             if ([alertView textFieldAtIndex:0].text.length != 0) {
-                BOOL isOK = [self.deviceCtr addNewDevice:[alertView textFieldAtIndex:0].text withRoomName:self.title];
+                BOOL isOK = [self.deviceCtr addNewDevice:[alertView textFieldAtIndex:0].text withRoomName:self.title withDeviveType:nil];
                 if (isOK) {
                     [[[UIAlertView alloc] initWithTitle:@"添加成功" message:@"已添加！"  delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
                     [self.deviceCtr initDevices:self.title];

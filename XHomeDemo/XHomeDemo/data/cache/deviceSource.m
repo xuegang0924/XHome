@@ -35,9 +35,9 @@
 /**
  *新增一个房间条目
  */
-- (BOOL)addDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName
+- (BOOL)addDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviveType:(NSString *)deviveType
 {
-    return [_deviceMd addNewDevice:newDeviceName withRoomName:whichRoomName];
+    return [_deviceMd addNewDevice:newDeviceName withRoomName:whichRoomName withDeviveType:deviveType];
 }
 
 

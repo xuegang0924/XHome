@@ -23,7 +23,7 @@
 /**
  *新增一个房间条目
  */
-- (BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName;
+- (BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviveType:(NSString *)deviveType;
 
 /**
  *更新一个房间条目

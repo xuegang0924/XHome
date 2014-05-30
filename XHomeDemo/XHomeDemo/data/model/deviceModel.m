@@ -31,7 +31,7 @@
 }
 
 
-//得到总房间
+//得到总设备
 -(NSMutableArray *)getDeviceMArry:(NSString *)whichRoomName
 {
     
@@ -43,8 +43,8 @@
     return  self.deviceMArry;
 }
 
-//添加一个新房间
--(BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName
+//添加一个新设备
+-(BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviveType:(NSString *)deviveType
 {
 
     
@@ -82,7 +82,7 @@
     
 }
 
-//更新一个房间
+//更新一个设备
 -(BOOL)updateADevice:(NSString *)newDeviceName withOldDeviceName:(NSString *)oldDeviceName  withRoomName:(NSString *)whichRoomName
 {
   
@@ -108,7 +108,7 @@
 }
 
 
-//删除一个房间
+//删除一个设备
 -(BOOL)deleteADevice:(NSString *)DeviceName  withRoomName:(NSString *)whichRoomName
 {
     

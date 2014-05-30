@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomsAddDevViewController.h"
 #import "deviceMgr.h"
 
 @interface RoomsDetailViewController : UIViewController
