@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScenaryAddCommandViewController.h"
+#import "scenaryMgr.h"
+#import "ButtonTagDef.h"
 
-@interface ScenaryViewController : UIViewController
+@interface ScenaryViewController : UIViewController<UIAlertViewDelegate>
 
+@property(strong,nonatomic)scenaryMgr *scenaryCtr;
 @end

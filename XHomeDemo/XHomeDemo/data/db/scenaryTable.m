@@ -31,7 +31,7 @@
     //    [self setUserCalculateForCN:@"address"];
     
     //enable the column binding property name
-    [self setTableColumnName:@"MyRoomName" bindingPropertyName:@"roomName"];
+    [self setTableColumnName:@"MyScenaryName" bindingPropertyName:@"scenaryName"];
     
     //You can create a table here
     //[[self getUsingLKDBHelper] createTableWithModelClass:self];
@@ -114,7 +114,7 @@
 //主键
 +(NSString *)getPrimaryKey
 {
-    return @"roomName";
+    return @"scenaryName";
 }
 
 //+(NSArray *)getPrimaryKeyUnionArray

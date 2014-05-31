@@ -10,6 +10,8 @@
 
 @implementation roomTable
 
+@synthesize roomName;
+
 
 //在类 初始化的时候
 +(void)initialize
@@ -41,6 +43,7 @@
 +(BOOL)dbWillInsert:(NSObject *)entity
 {
     LKErrorLog(@"will insert : %@",NSStringFromClass(self));
+    LKErrorLog(@"testlog");
     return YES;
 }
 
@@ -53,28 +56,28 @@
 // 重载    返回自己处理过的 要插入数据库的值
 -(id)userGetValueForModel:(LKDBProperty *)property
 {
-    //    if([property.sqlColumnName isEqualToString:@"address"])
-    //    {
-    //        if(self.address == nil)
-    //            return @"";
-    //        [LKTestForeign insertToDB:self.address];
-    //        return @(self.address.addid);
-    //    }
+    if([property.sqlColumnName isEqualToString:@"roomName"])
+    {
+        if(self.roomName == nil)
+            return @"";
+
+        return self.roomName;
+    }
     return nil;
 }
 
 // 重载    从数据库中  获取的值   经过自己处理 再保存
 -(void)userSetValueForModel:(LKDBProperty *)property value:(id)value
 {
-    //    if([property.sqlColumnName isEqualToString:@"address"])
-    //    {
-    //        self.address = nil;
-    //
-    //        NSMutableArray* array  = [LKTestForeign searchWithWhere:[NSString stringWithFormat:@"addid = %d",[value intValue]] orderBy:nil offset:0 count:1];
-    //
-    //        if(array.count>0)
-    //            self.address = [array objectAtIndex:0];
-    //    }
+//    if([property.sqlColumnName isEqualToString:@"roomName"])
+//    {
+//        self.roomName = nil;
+//
+//        NSMutableArray* array  = [LKTestForeign searchWithWhere:[NSString stringWithFormat:@"addid = %d",[value intValue]] orderBy:nil offset:0 count:1];
+//
+//        if(array.count>0)
+//            self.roomName = [array objectAtIndex:0];
+//    }
 }
 
 //列属性

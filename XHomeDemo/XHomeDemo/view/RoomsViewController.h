@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoomsAddViewController.h"
+#import "RoomsDetailViewController.h"
+#import "roomMgr.h"
+#import "ButtonTagDef.h"
 
-@interface RoomsViewController : UIViewController
+
+@interface RoomsViewController : UIViewController <UIAlertViewDelegate>
+
+@property(strong,nonatomic)roomMgr *roomCtr;
 
 @end

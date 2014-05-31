@@ -28,10 +28,10 @@
     //[self setUserCalculateForPTN:@"NSDictionary"];
     
     //enable own calculations
-//    [self setUserCalculateForCN:@"address"];
+//    [self setUserCalculateForCN:@"roomTableID"];
     
     //enable the column binding property name
-    [self setTableColumnName:@"MyRoomName" bindingPropertyName:@"roomName"];
+    [self setTableColumnName:@"MyRoomDevName" bindingPropertyName:@"roomDevName"];
     
     //You can create a table here
     //[[self getUsingLKDBHelper] createTableWithModelClass:self];
@@ -114,7 +114,7 @@
 //主键
 +(NSString *)getPrimaryKey
 {
-    return @"roomName";
+    return @"roomDevName";
 }
 
 //+(NSArray *)getPrimaryKeyUnionArray
@@ -125,7 +125,7 @@
 //表名
 +(NSString *)getTableName
 {
-    return @"LKTestTable";
+    return @"deviceTable";
 }
 
 //表版本
