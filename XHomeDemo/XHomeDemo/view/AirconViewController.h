@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "deviceMgr.h"
+#import "ButtonTagDef.h"
+#import "AddDevViewController.h"
 
-@interface AirconViewController : UIViewController
+@interface AirconViewController :UIViewController<UIAlertViewDelegate>
 
-@end
+@property(strong,nonatomic)deviceMgr *deviceCtr;@end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "deviceMgr.h"
+#import "ButtonTagDef.h"
+#import "AddDevViewController.h"
 
-@interface TVViewController : UIViewController
 
-@end
+@interface TVViewController : UIViewController<UIAlertViewDelegate>
+
+@property(strong,nonatomic)deviceMgr *deviceCtr;@end

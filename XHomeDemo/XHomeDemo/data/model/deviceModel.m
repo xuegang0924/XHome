@@ -37,14 +37,20 @@
     
     
     //异步搜索 所有的元素到数组中。
-
-    NSString *sql = [[NSString alloc] initWithFormat:@"roomID = '%@'",whichRoomName];
+    NSString *sql;
+    if ([whichRoomName hasPrefix:@"DEVICE_TYPE:"] == YES) {
+        NSString *strDevType = [whichRoomName substringFromIndex:12];
+        sql = [[NSString alloc] initWithFormat:@"deviceType = '%@'",strDevType];
+    } else {
+        sql = [[NSString alloc] initWithFormat:@"roomID = '%@'",whichRoomName];
+    }
+    
     self.deviceMArry = [self.dbHelper search:[deviceTable class] column:nil where:sql orderBy:nil offset:0 count:0];
     return  self.deviceMArry;
 }
 
 //添加一个新设备
--(BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviveType:(NSString *)deviveType
+-(BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviceType:(NSString *)deviceType
 {
 
     
@@ -74,6 +80,7 @@
     addDevTb.roomDevName = roomDeviceName;
     addDevTb.roomID = whichRoomName;
     addDevTb.deviceName = newDeviceName;
+    addDevTb.deviceType = deviceType;
 
     NSLog(@"rowID1:%d", addDevTb.rowid);
     BOOL ret = [self.dbHelper insertWhenNotExists:addDevTb];
@@ -85,10 +92,13 @@
 //更新一个设备
 -(BOOL)updateADevice:(NSString *)newDeviceName withOldDeviceName:(NSString *)oldDeviceName  withRoomName:(NSString *)whichRoomName
 {
-  
+    NSString *str = [[NSString alloc] initWithFormat:@"roomID = '%@' and deviceName = '%@'",whichRoomName,oldDeviceName];
+    NSMutableArray *marryDev = [self.dbHelper search:[deviceTable class] column:nil where:str orderBy:nil offset:0 count:0];
+    deviceTable *dt = [marryDev objectAtIndex:0];
     
     self.deviceTb.deviceName = newDeviceName;
-    self.deviceTb.roomID = whichRoomName;
+    self.deviceTb.roomID = dt.roomID;
+    self.deviceTb.deviceType = dt.deviceType;
     
     
     NSMutableString *roomDeviceName = [[NSMutableString alloc] init];

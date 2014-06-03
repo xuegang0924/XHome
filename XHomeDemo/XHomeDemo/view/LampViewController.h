@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "deviceMgr.h"
+#import "ButtonTagDef.h"
+#import "LampAddViewController.h"
+#import "AddDevViewController.h"
 
-@interface LampViewController : UIViewController
+@interface LampViewController : UIViewController<UIAlertViewDelegate>
+
+@property(strong,nonatomic)deviceMgr *deviceCtr;
 
 @end

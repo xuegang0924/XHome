@@ -1,8 +1,8 @@
 //
-//  AddDevViewController.h
+//  LampAddViewController.h
 //  XHomeDemo
 //
-//  Created by Gene on 14-5-11.
+//  Created by Gene on 14-6-3.
 //  Copyright (c) 2014年 ROBOTIZE-LIFE. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 #import "roomMgr.h"
 #import "ButtonTagDef.h"
 
-@interface AddDevViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
+@interface LampAddViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property(strong,nonatomic)IBOutlet UIButton *btnDeviceRoom;
 @property(strong,nonatomic)IBOutlet UIButton *btnOK;

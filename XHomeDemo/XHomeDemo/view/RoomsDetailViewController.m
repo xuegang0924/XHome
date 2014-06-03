@@ -17,12 +17,16 @@
 
 @synthesize deviceCtr;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.deviceCtr = [[deviceMgr alloc] init];
+        if (!self.deviceCtr) {
+            
+            self.deviceCtr = [[deviceMgr alloc] init];
+        }
     }
     return self;
 }
@@ -36,19 +40,14 @@
     addDevBtn.tag = ADDNEWDEV_BUTTON_TAG;
     self.navigationItem.rightBarButtonItem = addDevBtn;
     
-    NSLog(@"%@",self.title);
-    
-    
-
     [self.deviceCtr initDevices:self.title];
-    
     [self updateView:self.deviceCtr];
     
 }
 
 - (void)btnShortClk:(UIButton *)sender
 {
-
+    NSLog(@"ShortClick");
     //如果是添加设备按钮按下 弹出添加框
     if (sender.tag == ADDNEWDEV_BUTTON_TAG) {
         
@@ -58,6 +57,7 @@
 //        addDevAlertv.tag = ALERT_VIEW_ADDDEV;
 //        [addDevAlertv show];
         RoomsAddDevViewController *radVc = [[RoomsAddDevViewController alloc] init];
+        radVc.title = self.title;
         [self.navigationController pushViewController:radVc animated:YES];
     }
 
@@ -82,27 +82,7 @@
 //UIAlertView响应 代理函数
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView.tag == ALERT_VIEW_ADDDEV) { //添加按钮 提示框
-        if (buttonIndex == 0) {
-            NSLog(@"quxiao");
-        } else if (buttonIndex == 1) {
-            if ([alertView textFieldAtIndex:0].text.length != 0) {
-                BOOL isOK = [self.deviceCtr addNewDevice:[alertView textFieldAtIndex:0].text withRoomName:self.title withDeviveType:nil];
-                if (isOK) {
-                    [[[UIAlertView alloc] initWithTitle:@"添加成功" message:@"已添加！"  delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
-                    [self.deviceCtr initDevices:self.title];
-                    [self updateView:self.deviceCtr];
-                } else {
-                    [[[UIAlertView alloc] initWithTitle:@"添加失败" message:@"房间名重复，请更换房间名重新输入！"  delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil] show];
-                }
-            } else {
-                UIAlertView * av = [[UIAlertView alloc] initWithTitle:@"失败" message:@"请输入房间名！"  delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
-                [av show];
-            }
-            
-        }
-        
-    } else if (alertView.tag == ALERT_VIEW_UPDATE) {
+    if (alertView.tag == ALERT_VIEW_UPDATE) {
         if (buttonIndex == 0) {         //取消
             NSLog(@"quxiao");
             
@@ -184,6 +164,9 @@
     //TODO:2.将查询到的条目 以按钮的形式添加到view中
 #define SQUARE_SIDE_LONGTH ([[UIScreen mainScreen] bounds].size.width / 2 - 5 - 10) //一个正方形边长
 #define ONE_PAGE_HEIGHT ((SQUARE_SIDE_LONGTH + 10) * 5) //一页的高
+    CGFloat r = 0.5;
+    CGFloat g = 0.5;
+    CGFloat b = 0.5;
     int count = 0;
     for (NSObject *obj in dvCtr.devicesArry) {
         
@@ -196,13 +179,19 @@
         [btn setTitle:dt.deviceName forState:UIControlStateNormal];
         
         btn.titleLabel.font = [UIFont systemFontOfSize:20.0];
-        CGFloat r = (arc4random() % 60 + 20) / 100.0 ;
-        CGFloat g = (arc4random() % 60 + 20) / 100.0 ;
-        CGFloat b = (arc4random() % 60 + 20) / 100.0 ;
-        [btn setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:1.0]];
-        //        [btn setTitleColor:[UIColor colorWithRed:1.0-r green:1.0-g blue:1.0-b alpha:1.0] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
         int btnTypeNum = (count+1) % 10;
+        
+//        if (btnTypeNum == 1 || btnTypeNum == 3 || btnTypeNum == 5 || btnTypeNum == 6 || btnTypeNum == 8)
+        {
+            r = (arc4random() % 60 + 20) / 100.0 ;
+            g = (arc4random() % 60 + 20) / 100.0 ;
+            b = (arc4random() % 60 + 20) / 100.0 ;
+        }
+        [btn setBackgroundColor:[UIColor colorWithRed:r green:g blue:b alpha:1.0]];
+        
+        
         switch (btnTypeNum) {
                 //                      group 1
                 //                 --------    --------
@@ -305,8 +294,8 @@
 }
 
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle
+//{
+//    return UIStatusBarStyleLightContent;
+//}
 @end
