@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "deviceMgr.h"
+#import "ButtonTagDef.h"
+#import "AddDevViewController.h"
 
-@interface WebcamViewController : UIViewController
+@interface WebcamViewController : UIViewController<UIAlertViewDelegate>
+
+@property(strong,nonatomic)deviceMgr *deviceCtr;
 
 @end

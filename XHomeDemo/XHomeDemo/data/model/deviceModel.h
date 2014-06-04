@@ -20,7 +20,7 @@
 -(NSMutableArray *)getDeviceMArry:(NSString *)whichRoomName;
 
 //添加一个新设备
--(BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviveType:(NSString *)deviveType;
+-(BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviceType:(NSString *)deviceType;
 
 //更新一个设备
 -(BOOL)updateADevice:(NSString *)newDeviceName withOldDeviceName:(NSString *)oldDeviceName  withRoomName:(NSString *)whichRoomName;

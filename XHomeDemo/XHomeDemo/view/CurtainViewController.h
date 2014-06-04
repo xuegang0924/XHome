@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "deviceMgr.h"
+#import "ButtonTagDef.h"
+#import "AddDevViewController.h"
 
-@interface CurtainViewController : UIViewController
+@interface CurtainViewController : UIViewController<UIAlertViewDelegate>
 
+@property(strong,nonatomic)deviceMgr *deviceCtr;
 @end
