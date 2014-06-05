@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "RoomsAddDevViewController.h"
 #import "deviceMgr.h"
+#import "LampShowViewController.h"
+#import "TVShowViewController.h"
+#import "AirconShowViewController.h"
+#import "SocShowViewController.h"
+#import "CuttainShowViewController.h"
+#import "WebcamShowViewController.h"
 
 @interface RoomsDetailViewController : UIViewController
 

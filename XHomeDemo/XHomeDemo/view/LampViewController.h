@@ -11,6 +11,7 @@
 #import "ButtonTagDef.h"
 #import "LampAddViewController.h"
 #import "AddDevViewController.h"
+#import "LampShowViewController.h"
 
 @interface LampViewController : UIViewController<UIAlertViewDelegate>
 

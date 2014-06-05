@@ -63,6 +63,45 @@
 		B032C6681924C43100C08402 /* LKDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6601924C43100C08402 /* LKDBUtils.m */; };
 		B032C6691924C43100C08402 /* NSObject+LKDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6621924C43100C08402 /* NSObject+LKDBHelper.m */; };
 		B032C66A1924C43100C08402 /* NSObject+LKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B032C6641924C43100C08402 /* NSObject+LKModel.m */; };
+		B0579F2C193EB99A0024B73F /* LampShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0579F2A193EB99A0024B73F /* LampShowViewController.m */; };
+		B0579F2D193EB99A0024B73F /* LampShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0579F2B193EB99A0024B73F /* LampShowViewController.xib */; };
+		B0579F32193ECAAB0024B73F /* lamp_OFF_480_285.png in Resources */ = {isa = PBXBuildFile; fileRef = B0579F30193ECAAB0024B73F /* lamp_OFF_480_285.png */; };
+		B0579F33193ECAAB0024B73F /* lamp_ON_480_285.png in Resources */ = {isa = PBXBuildFile; fileRef = B0579F31193ECAAB0024B73F /* lamp_ON_480_285.png */; };
+		B072C9CE19400C880055998F /* cold_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9C319400C880055998F /* cold_400_400.png */; };
+		B072C9CF19400C880055998F /* custom_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9C419400C880055998F /* custom_400_400.png */; };
+		B072C9D019400C880055998F /* down_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9C519400C880055998F /* down_400_400.png */; };
+		B072C9D119400C880055998F /* fengsu_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9C619400C880055998F /* fengsu_400_400.png */; };
+		B072C9D219400C880055998F /* hot_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9C719400C880055998F /* hot_400_400.png */; };
+		B072C9D319400C880055998F /* kaiguan_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9C819400C880055998F /* kaiguan_400_400.png */; };
+		B072C9D419400C880055998F /* NULL_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9C919400C880055998F /* NULL_400_400.png */; };
+		B072C9D519400C880055998F /* rightleft_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9CA19400C880055998F /* rightleft_400_400.png */; };
+		B072C9D619400C880055998F /* up_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9CB19400C880055998F /* up_400_400.png */; };
+		B072C9D719400C880055998F /* updown_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9CC19400C880055998F /* updown_400_400.png */; };
+		B072C9D819400C880055998F /* ventilate_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9CD19400C880055998F /* ventilate_400_400.png */; };
+		B072C9F019400C910055998F /* 0_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9DA19400C910055998F /* 0_400_400.png */; };
+		B072C9F119400C910055998F /* 1_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9DB19400C910055998F /* 1_400_400.png */; };
+		B072C9F219400C910055998F /* 2_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9DC19400C910055998F /* 2_400_400.png */; };
+		B072C9F319400C910055998F /* 3_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9DD19400C910055998F /* 3_400_400.png */; };
+		B072C9F419400C910055998F /* 4_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9DE19400C910055998F /* 4_400_400.png */; };
+		B072C9F519400C910055998F /* 5_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9DF19400C910055998F /* 5_400_400.png */; };
+		B072C9F619400C910055998F /* 6_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E019400C910055998F /* 6_400_400.png */; };
+		B072C9F719400C910055998F /* 7_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E119400C910055998F /* 7_400_400.png */; };
+		B072C9F819400C910055998F /* 8_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E219400C910055998F /* 8_400_400.png */; };
+		B072C9F919400C910055998F /* 9_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E319400C910055998F /* 9_400_400.png */; };
+		B072C9FA19400C910055998F /* custom_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E419400C910055998F /* custom_400_400.png */; };
+		B072C9FB19400C910055998F /* down_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E519400C910055998F /* down_400_400.png */; };
+		B072C9FC19400C910055998F /* goback_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E619400C910055998F /* goback_400_400.png */; };
+		B072C9FD19400C910055998F /* kaiguan_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E719400C910055998F /* kaiguan_400_400.png */; };
+		B072C9FE19400C910055998F /* left_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E819400C910055998F /* left_400_400.png */; };
+		B072C9FF19400C910055998F /* menu_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9E919400C910055998F /* menu_400_400.png */; };
+		B072CA0019400C910055998F /* mute_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9EA19400C910055998F /* mute_400_400.png */; };
+		B072CA0119400C910055998F /* NULL_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9EB19400C910055998F /* NULL_400_400.png */; };
+		B072CA0219400C910055998F /* OK_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9EC19400C910055998F /* OK_400_400.png */; };
+		B072CA0319400C910055998F /* right_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9ED19400C910055998F /* right_400_400.png */; };
+		B072CA0419400C910055998F /* signalSource_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9EE19400C910055998F /* signalSource_400_400.png */; };
+		B072CA0519400C910055998F /* up_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072C9EF19400C910055998F /* up_400_400.png */; };
+		B072CA0919400C980055998F /* photo_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072CA0719400C980055998F /* photo_400_400.png */; };
+		B072CA0A19400C980055998F /* record_400_400.png in Resources */ = {isa = PBXBuildFile; fileRef = B072CA0819400C980055998F /* record_400_400.png */; };
 		B0850F69192601170047419F /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0850F68192601170047419F /* libsqlite3.dylib */; };
 		B0850F6C192605380047419F /* roomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0850F6B192605380047419F /* roomModel.m */; };
 		B0850F6F192605510047419F /* deviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0850F6E192605510047419F /* deviceModel.m */; };
@@ -79,6 +118,21 @@
 		B090E259192B794100934BFB /* NEWLOGO -Highlight156.png in Resources */ = {isa = PBXBuildFile; fileRef = B090E24E192B794100934BFB /* NEWLOGO -Highlight156.png */; };
 		B090E25A192B794100934BFB /* NEWLOGO -Highlight1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B090E24F192B794100934BFB /* NEWLOGO -Highlight1024.png */; };
 		B090E25B192B794100934BFB /* TurnOFFImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = B090E250192B794100934BFB /* TurnOFFImage1.png */; };
+		B0A07820193F14FA00405252 /* TVShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0781E193F14FA00405252 /* TVShowViewController.m */; };
+		B0A07821193F14FA00405252 /* TVShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A0781F193F14FA00405252 /* TVShowViewController.xib */; };
+		B0A07825193F151200405252 /* AirconShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A07823193F151200405252 /* AirconShowViewController.m */; };
+		B0A07826193F151200405252 /* AirconShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A07824193F151200405252 /* AirconShowViewController.xib */; };
+		B0A0782A193F152400405252 /* SocShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A07828193F152400405252 /* SocShowViewController.m */; };
+		B0A0782B193F152400405252 /* SocShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A07829193F152400405252 /* SocShowViewController.xib */; };
+		B0A0782F193F153B00405252 /* CuttainShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A0782D193F153B00405252 /* CuttainShowViewController.m */; };
+		B0A07830193F153B00405252 /* CuttainShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A0782E193F153B00405252 /* CuttainShowViewController.xib */; };
+		B0A07834193F155200405252 /* WebcamShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A07832193F155200405252 /* WebcamShowViewController.m */; };
+		B0A07835193F155200405252 /* WebcamShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A07833193F155200405252 /* WebcamShowViewController.xib */; };
+		B0A07839193F226000405252 /* soc_OFF_480_480.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A07837193F226000405252 /* soc_OFF_480_480.png */; };
+		B0A0783A193F226000405252 /* soc_ON_480_480.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A07838193F226000405252 /* soc_ON_480_480.png */; };
+		B0A0783C193F22A200405252 /* NEWLOGO 若愚安智.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A0783B193F22A200405252 /* NEWLOGO 若愚安智.png */; };
+		B0A07840193F284B00405252 /* curtain_OFF_480_480.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A0783E193F284B00405252 /* curtain_OFF_480_480.png */; };
+		B0A07841193F284B00405252 /* curtain_ON_480_480.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A0783F193F284B00405252 /* curtain_ON_480_480.png */; };
 		B0B8D64E192CBEC4009743B6 /* RoomsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8D64C192CBEC4009743B6 /* RoomsDetailViewController.m */; };
 		B0B8D64F192CBEC4009743B6 /* RoomsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B8D64D192CBEC4009743B6 /* RoomsDetailViewController.xib */; };
 		B0F6EE3A19387C3500A114E1 /* ScenaryAddCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6EE3819387C3500A114E1 /* ScenaryAddCommandViewController.m */; };
@@ -185,6 +239,46 @@
 		B032C6621924C43100C08402 /* NSObject+LKDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKDBHelper.m"; sourceTree = "<group>"; };
 		B032C6631924C43100C08402 /* NSObject+LKModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LKModel.h"; sourceTree = "<group>"; };
 		B032C6641924C43100C08402 /* NSObject+LKModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LKModel.m"; sourceTree = "<group>"; };
+		B0579F29193EB99A0024B73F /* LampShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LampShowViewController.h; path = view/LampShowViewController.h; sourceTree = "<group>"; };
+		B0579F2A193EB99A0024B73F /* LampShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LampShowViewController.m; path = view/LampShowViewController.m; sourceTree = "<group>"; };
+		B0579F2B193EB99A0024B73F /* LampShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LampShowViewController.xib; path = view/LampShowViewController.xib; sourceTree = "<group>"; };
+		B0579F30193ECAAB0024B73F /* lamp_OFF_480_285.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp_OFF_480_285.png; sourceTree = "<group>"; };
+		B0579F31193ECAAB0024B73F /* lamp_ON_480_285.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lamp_ON_480_285.png; sourceTree = "<group>"; };
+		B072C9C319400C880055998F /* cold_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cold_400_400.png; sourceTree = "<group>"; };
+		B072C9C419400C880055998F /* custom_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom_400_400.png; sourceTree = "<group>"; };
+		B072C9C519400C880055998F /* down_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_400_400.png; sourceTree = "<group>"; };
+		B072C9C619400C880055998F /* fengsu_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fengsu_400_400.png; sourceTree = "<group>"; };
+		B072C9C719400C880055998F /* hot_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hot_400_400.png; sourceTree = "<group>"; };
+		B072C9C819400C880055998F /* kaiguan_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaiguan_400_400.png; sourceTree = "<group>"; };
+		B072C9C919400C880055998F /* NULL_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NULL_400_400.png; sourceTree = "<group>"; };
+		B072C9CA19400C880055998F /* rightleft_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightleft_400_400.png; sourceTree = "<group>"; };
+		B072C9CB19400C880055998F /* up_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up_400_400.png; sourceTree = "<group>"; };
+		B072C9CC19400C880055998F /* updown_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = updown_400_400.png; sourceTree = "<group>"; };
+		B072C9CD19400C880055998F /* ventilate_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ventilate_400_400.png; sourceTree = "<group>"; };
+		B072C9DA19400C910055998F /* 0_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_400_400.png; sourceTree = "<group>"; };
+		B072C9DB19400C910055998F /* 1_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_400_400.png; sourceTree = "<group>"; };
+		B072C9DC19400C910055998F /* 2_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_400_400.png; sourceTree = "<group>"; };
+		B072C9DD19400C910055998F /* 3_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_400_400.png; sourceTree = "<group>"; };
+		B072C9DE19400C910055998F /* 4_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_400_400.png; sourceTree = "<group>"; };
+		B072C9DF19400C910055998F /* 5_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_400_400.png; sourceTree = "<group>"; };
+		B072C9E019400C910055998F /* 6_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6_400_400.png; sourceTree = "<group>"; };
+		B072C9E119400C910055998F /* 7_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_400_400.png; sourceTree = "<group>"; };
+		B072C9E219400C910055998F /* 8_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8_400_400.png; sourceTree = "<group>"; };
+		B072C9E319400C910055998F /* 9_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9_400_400.png; sourceTree = "<group>"; };
+		B072C9E419400C910055998F /* custom_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom_400_400.png; sourceTree = "<group>"; };
+		B072C9E519400C910055998F /* down_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_400_400.png; sourceTree = "<group>"; };
+		B072C9E619400C910055998F /* goback_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goback_400_400.png; sourceTree = "<group>"; };
+		B072C9E719400C910055998F /* kaiguan_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaiguan_400_400.png; sourceTree = "<group>"; };
+		B072C9E819400C910055998F /* left_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_400_400.png; sourceTree = "<group>"; };
+		B072C9E919400C910055998F /* menu_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_400_400.png; sourceTree = "<group>"; };
+		B072C9EA19400C910055998F /* mute_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mute_400_400.png; sourceTree = "<group>"; };
+		B072C9EB19400C910055998F /* NULL_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NULL_400_400.png; sourceTree = "<group>"; };
+		B072C9EC19400C910055998F /* OK_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK_400_400.png; sourceTree = "<group>"; };
+		B072C9ED19400C910055998F /* right_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_400_400.png; sourceTree = "<group>"; };
+		B072C9EE19400C910055998F /* signalSource_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signalSource_400_400.png; sourceTree = "<group>"; };
+		B072C9EF19400C910055998F /* up_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up_400_400.png; sourceTree = "<group>"; };
+		B072CA0719400C980055998F /* photo_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo_400_400.png; sourceTree = "<group>"; };
+		B072CA0819400C980055998F /* record_400_400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_400_400.png; sourceTree = "<group>"; };
 		B0850F68192601170047419F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B0850F6A192605380047419F /* roomModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = roomModel.h; path = data/model/roomModel.h; sourceTree = "<group>"; };
 		B0850F6B192605380047419F /* roomModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = roomModel.m; path = data/model/roomModel.m; sourceTree = "<group>"; };
@@ -206,6 +300,26 @@
 		B090E24E192B794100934BFB /* NEWLOGO -Highlight156.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NEWLOGO -Highlight156.png"; path = "images/icon/NEWLOGO -Highlight156.png"; sourceTree = "<group>"; };
 		B090E24F192B794100934BFB /* NEWLOGO -Highlight1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NEWLOGO -Highlight1024.png"; path = "images/icon/NEWLOGO -Highlight1024.png"; sourceTree = "<group>"; };
 		B090E250192B794100934BFB /* TurnOFFImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TurnOFFImage1.png; path = images/icon/TurnOFFImage1.png; sourceTree = "<group>"; };
+		B0A0781D193F14FA00405252 /* TVShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TVShowViewController.h; path = view/TVShowViewController.h; sourceTree = "<group>"; };
+		B0A0781E193F14FA00405252 /* TVShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TVShowViewController.m; path = view/TVShowViewController.m; sourceTree = "<group>"; };
+		B0A0781F193F14FA00405252 /* TVShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TVShowViewController.xib; path = view/TVShowViewController.xib; sourceTree = "<group>"; };
+		B0A07822193F151200405252 /* AirconShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AirconShowViewController.h; path = view/AirconShowViewController.h; sourceTree = "<group>"; };
+		B0A07823193F151200405252 /* AirconShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AirconShowViewController.m; path = view/AirconShowViewController.m; sourceTree = "<group>"; };
+		B0A07824193F151200405252 /* AirconShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AirconShowViewController.xib; path = view/AirconShowViewController.xib; sourceTree = "<group>"; };
+		B0A07827193F152400405252 /* SocShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocShowViewController.h; path = view/SocShowViewController.h; sourceTree = "<group>"; };
+		B0A07828193F152400405252 /* SocShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocShowViewController.m; path = view/SocShowViewController.m; sourceTree = "<group>"; };
+		B0A07829193F152400405252 /* SocShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SocShowViewController.xib; path = view/SocShowViewController.xib; sourceTree = "<group>"; };
+		B0A0782C193F153B00405252 /* CuttainShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CuttainShowViewController.h; path = view/CuttainShowViewController.h; sourceTree = "<group>"; };
+		B0A0782D193F153B00405252 /* CuttainShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CuttainShowViewController.m; path = view/CuttainShowViewController.m; sourceTree = "<group>"; };
+		B0A0782E193F153B00405252 /* CuttainShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CuttainShowViewController.xib; path = view/CuttainShowViewController.xib; sourceTree = "<group>"; };
+		B0A07831193F155200405252 /* WebcamShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebcamShowViewController.h; path = view/WebcamShowViewController.h; sourceTree = "<group>"; };
+		B0A07832193F155200405252 /* WebcamShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebcamShowViewController.m; path = view/WebcamShowViewController.m; sourceTree = "<group>"; };
+		B0A07833193F155200405252 /* WebcamShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebcamShowViewController.xib; path = view/WebcamShowViewController.xib; sourceTree = "<group>"; };
+		B0A07837193F226000405252 /* soc_OFF_480_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soc_OFF_480_480.png; sourceTree = "<group>"; };
+		B0A07838193F226000405252 /* soc_ON_480_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soc_ON_480_480.png; sourceTree = "<group>"; };
+		B0A0783B193F22A200405252 /* NEWLOGO 若愚安智.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NEWLOGO 若愚安智.png"; path = "images/NEWLOGO 若愚安智.png"; sourceTree = "<group>"; };
+		B0A0783E193F284B00405252 /* curtain_OFF_480_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curtain_OFF_480_480.png; sourceTree = "<group>"; };
+		B0A0783F193F284B00405252 /* curtain_ON_480_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curtain_ON_480_480.png; sourceTree = "<group>"; };
 		B0B8D64B192CBEC4009743B6 /* RoomsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsDetailViewController.h; path = view/RoomsDetailViewController.h; sourceTree = "<group>"; };
 		B0B8D64C192CBEC4009743B6 /* RoomsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsDetailViewController.m; path = view/RoomsDetailViewController.m; sourceTree = "<group>"; };
 		B0B8D64D192CBEC4009743B6 /* RoomsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomsDetailViewController.xib; path = view/RoomsDetailViewController.xib; sourceTree = "<group>"; };
@@ -382,6 +496,12 @@
 		B02688F9191F78DE0005CE52 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				B072CA0619400C980055998F /* webcam */,
+				B072C9D919400C910055998F /* remoteIcons */,
+				B072C9C219400C880055998F /* airconIcons */,
+				B0A0783D193F284B00405252 /* curtain */,
+				B0A07836193F226000405252 /* soc */,
+				B0579F2F193ECAAB0024B73F /* lamp */,
 				B090E25C192B7A3C00934BFB /* icon */,
 			);
 			name = images;
@@ -443,6 +563,16 @@
 			path = data/db/Helper;
 			sourceTree = "<group>";
 		};
+		B0579F2F193ECAAB0024B73F /* lamp */ = {
+			isa = PBXGroup;
+			children = (
+				B0579F30193ECAAB0024B73F /* lamp_OFF_480_285.png */,
+				B0579F31193ECAAB0024B73F /* lamp_ON_480_285.png */,
+			);
+			name = lamp;
+			path = images/lamp;
+			sourceTree = "<group>";
+		};
 		B07217ED1929FBA8009C1EDF /* rootView */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +622,9 @@
 				B0268945191F82FE0005CE52 /* LampViewController.h */,
 				B0268946191F82FE0005CE52 /* LampViewController.m */,
 				B0268947191F82FE0005CE52 /* LampViewController.xib */,
+				B0579F29193EB99A0024B73F /* LampShowViewController.h */,
+				B0579F2A193EB99A0024B73F /* LampShowViewController.m */,
+				B0579F2B193EB99A0024B73F /* LampShowViewController.xib */,
 			);
 			name = lampView;
 			sourceTree = "<group>";
@@ -502,6 +635,9 @@
 				B026894A191F832C0005CE52 /* WebcamViewController.h */,
 				B026894B191F832D0005CE52 /* WebcamViewController.m */,
 				B026894C191F832D0005CE52 /* WebcamViewController.xib */,
+				B0A07831193F155200405252 /* WebcamShowViewController.h */,
+				B0A07832193F155200405252 /* WebcamShowViewController.m */,
+				B0A07833193F155200405252 /* WebcamShowViewController.xib */,
 			);
 			name = webcamView;
 			sourceTree = "<group>";
@@ -512,6 +648,9 @@
 				B026894F191F834B0005CE52 /* CurtainViewController.h */,
 				B0268950191F834B0005CE52 /* CurtainViewController.m */,
 				B0268951191F834B0005CE52 /* CurtainViewController.xib */,
+				B0A0782C193F153B00405252 /* CuttainShowViewController.h */,
+				B0A0782D193F153B00405252 /* CuttainShowViewController.m */,
+				B0A0782E193F153B00405252 /* CuttainShowViewController.xib */,
 			);
 			name = curtainView;
 			sourceTree = "<group>";
@@ -522,6 +661,9 @@
 				B0268954191F83610005CE52 /* TVViewController.h */,
 				B0268955191F83610005CE52 /* TVViewController.m */,
 				B0268956191F83610005CE52 /* TVViewController.xib */,
+				B0A0781D193F14FA00405252 /* TVShowViewController.h */,
+				B0A0781E193F14FA00405252 /* TVShowViewController.m */,
+				B0A0781F193F14FA00405252 /* TVShowViewController.xib */,
 			);
 			name = tvView;
 			sourceTree = "<group>";
@@ -532,6 +674,9 @@
 				B0268959191F83850005CE52 /* SocViewController.h */,
 				B026895A191F83850005CE52 /* SocViewController.m */,
 				B026895B191F83850005CE52 /* SocViewController.xib */,
+				B0A07827193F152400405252 /* SocShowViewController.h */,
+				B0A07828193F152400405252 /* SocShowViewController.m */,
+				B0A07829193F152400405252 /* SocShowViewController.xib */,
 			);
 			name = socView;
 			sourceTree = "<group>";
@@ -542,6 +687,9 @@
 				B026895E191F83D90005CE52 /* AirconViewController.h */,
 				B026895F191F83DA0005CE52 /* AirconViewController.m */,
 				B0268960191F83DA0005CE52 /* AirconViewController.xib */,
+				B0A07822193F151200405252 /* AirconShowViewController.h */,
+				B0A07823193F151200405252 /* AirconShowViewController.m */,
+				B0A07824193F151200405252 /* AirconShowViewController.xib */,
 			);
 			name = airconView;
 			sourceTree = "<group>";
@@ -566,6 +714,65 @@
 			name = addView;
 			sourceTree = "<group>";
 		};
+		B072C9C219400C880055998F /* airconIcons */ = {
+			isa = PBXGroup;
+			children = (
+				B072C9C319400C880055998F /* cold_400_400.png */,
+				B072C9C419400C880055998F /* custom_400_400.png */,
+				B072C9C519400C880055998F /* down_400_400.png */,
+				B072C9C619400C880055998F /* fengsu_400_400.png */,
+				B072C9C719400C880055998F /* hot_400_400.png */,
+				B072C9C819400C880055998F /* kaiguan_400_400.png */,
+				B072C9C919400C880055998F /* NULL_400_400.png */,
+				B072C9CA19400C880055998F /* rightleft_400_400.png */,
+				B072C9CB19400C880055998F /* up_400_400.png */,
+				B072C9CC19400C880055998F /* updown_400_400.png */,
+				B072C9CD19400C880055998F /* ventilate_400_400.png */,
+			);
+			name = airconIcons;
+			path = images/airconIcons;
+			sourceTree = "<group>";
+		};
+		B072C9D919400C910055998F /* remoteIcons */ = {
+			isa = PBXGroup;
+			children = (
+				B072C9DA19400C910055998F /* 0_400_400.png */,
+				B072C9DB19400C910055998F /* 1_400_400.png */,
+				B072C9DC19400C910055998F /* 2_400_400.png */,
+				B072C9DD19400C910055998F /* 3_400_400.png */,
+				B072C9DE19400C910055998F /* 4_400_400.png */,
+				B072C9DF19400C910055998F /* 5_400_400.png */,
+				B072C9E019400C910055998F /* 6_400_400.png */,
+				B072C9E119400C910055998F /* 7_400_400.png */,
+				B072C9E219400C910055998F /* 8_400_400.png */,
+				B072C9E319400C910055998F /* 9_400_400.png */,
+				B072C9E419400C910055998F /* custom_400_400.png */,
+				B072C9E519400C910055998F /* down_400_400.png */,
+				B072C9E619400C910055998F /* goback_400_400.png */,
+				B072C9E719400C910055998F /* kaiguan_400_400.png */,
+				B072C9E819400C910055998F /* left_400_400.png */,
+				B072C9E919400C910055998F /* menu_400_400.png */,
+				B072C9EA19400C910055998F /* mute_400_400.png */,
+				B072C9EB19400C910055998F /* NULL_400_400.png */,
+				B072C9EC19400C910055998F /* OK_400_400.png */,
+				B072C9ED19400C910055998F /* right_400_400.png */,
+				B072C9EE19400C910055998F /* signalSource_400_400.png */,
+				B072C9EF19400C910055998F /* up_400_400.png */,
+			);
+			name = remoteIcons;
+			path = images/remoteIcons;
+			sourceTree = "<group>";
+		};
+		B072CA0619400C980055998F /* webcam */ = {
+			isa = PBXGroup;
+			children = (
+				B072CA0719400C980055998F /* photo_400_400.png */,
+				B072CA0819400C980055998F /* record_400_400.png */,
+			);
+			name = webcam;
+			path = images/webcam;
+			sourceTree = "<group>";
+		};
 		B0850F67192600DE0047419F /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +783,7 @@
 		B090E25C192B7A3C00934BFB /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				B0A0783B193F22A200405252 /* NEWLOGO 若愚安智.png */,
 				B090E246192B794100934BFB /* NEWLOGO -Highlight.png */,
 				B090E247192B794100934BFB /* NEWLOGO -Highlight29.png */,
 				B090E248192B794100934BFB /* NEWLOGO -Highlight40.png */,
@@ -589,6 +797,26 @@
 				B090E250192B794100934BFB /* TurnOFFImage1.png */,
 			);
 			name = icon;
+			sourceTree = "<group>";
+		};
+		B0A07836193F226000405252 /* soc */ = {
+			isa = PBXGroup;
+			children = (
+				B0A07837193F226000405252 /* soc_OFF_480_480.png */,
+				B0A07838193F226000405252 /* soc_ON_480_480.png */,
+			);
+			name = soc;
+			path = images/soc;
+			sourceTree = "<group>";
+		};
+		B0A0783D193F284B00405252 /* curtain */ = {
+			isa = PBXGroup;
+			children = (
+				B0A0783E193F284B00405252 /* curtain_OFF_480_480.png */,
+				B0A0783F193F284B00405252 /* curtain_ON_480_480.png */,
+			);
+			name = curtain;
+			path = images/curtain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,33 +872,81 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0268962191F83DA0005CE52 /* AirconViewController.xib in Resources */,
+				B072CA0219400C910055998F /* OK_400_400.png in Resources */,
+				B0A07826193F151200405252 /* AirconShowViewController.xib in Resources */,
+				B072C9F019400C910055998F /* 0_400_400.png in Resources */,
+				B072C9F919400C910055998F /* 9_400_400.png in Resources */,
+				B072CA0A19400C980055998F /* record_400_400.png in Resources */,
 				B026895D191F83850005CE52 /* SocViewController.xib in Resources */,
 				B032C6421924C34F00C08402 /* RoomsAddViewController.xib in Resources */,
+				B072C9FA19400C910055998F /* custom_400_400.png in Resources */,
 				B090E253192B794100934BFB /* NEWLOGO -Highlight40.png in Resources */,
 				B0B8D64F192CBEC4009743B6 /* RoomsDetailViewController.xib in Resources */,
+				B072C9CF19400C880055998F /* custom_400_400.png in Resources */,
+				B0579F33193ECAAB0024B73F /* lamp_ON_480_285.png in Resources */,
 				B0268944191F82D50005CE52 /* AddDevViewController.xib in Resources */,
+				B072C9FC19400C910055998F /* goback_400_400.png in Resources */,
+				B0A0783C193F22A200405252 /* NEWLOGO 若愚安智.png in Resources */,
+				B072C9D819400C880055998F /* ventilate_400_400.png in Resources */,
 				B0268953191F834B0005CE52 /* CurtainViewController.xib in Resources */,
 				B090E254192B794100934BFB /* NEWLOGO -Highlight58.png in Resources */,
+				B072C9D719400C880055998F /* updown_400_400.png in Resources */,
+				B0A0783A193F226000405252 /* soc_ON_480_480.png in Resources */,
 				B0F6EE3B19387C3500A114E1 /* ScenaryAddCommandViewController.xib in Resources */,
+				B0A07821193F14FA00405252 /* TVShowViewController.xib in Resources */,
+				B0579F2D193EB99A0024B73F /* LampShowViewController.xib in Resources */,
+				B0A07840193F284B00405252 /* curtain_OFF_480_480.png in Resources */,
 				B026893A191F80D80005CE52 /* ScenaryViewController.xib in Resources */,
+				B0A07830193F153B00405252 /* CuttainShowViewController.xib in Resources */,
+				B072C9F319400C910055998F /* 3_400_400.png in Resources */,
+				B072C9F719400C910055998F /* 7_400_400.png in Resources */,
 				B090E259192B794100934BFB /* NEWLOGO -Highlight156.png in Resources */,
 				B0268949191F82FE0005CE52 /* LampViewController.xib in Resources */,
 				B090E258192B794100934BFB /* NEWLOGO -Highlight152.png in Resources */,
+				B072C9D019400C880055998F /* down_400_400.png in Resources */,
+				B072C9F819400C910055998F /* 8_400_400.png in Resources */,
+				B072C9D119400C880055998F /* fengsu_400_400.png in Resources */,
 				B0F6EE40193892EF00A114E1 /* RoomsAddDevViewController.xib in Resources */,
 				B090E25A192B794100934BFB /* NEWLOGO -Highlight1024.png in Resources */,
+				B072CA0419400C910055998F /* signalSource_400_400.png in Resources */,
+				B072CA0319400C910055998F /* right_400_400.png in Resources */,
+				B0A07841193F284B00405252 /* curtain_ON_480_480.png in Resources */,
+				B072C9FE19400C910055998F /* left_400_400.png in Resources */,
+				B072CA0519400C910055998F /* up_400_400.png in Resources */,
+				B072C9F119400C910055998F /* 1_400_400.png in Resources */,
+				B072C9F619400C910055998F /* 6_400_400.png in Resources */,
+				B072C9D419400C880055998F /* NULL_400_400.png in Resources */,
+				B072CA0919400C980055998F /* photo_400_400.png in Resources */,
+				B072C9F219400C910055998F /* 2_400_400.png in Resources */,
+				B072C9D619400C880055998F /* up_400_400.png in Resources */,
 				B090E256192B794100934BFB /* NEWLOGO -Highlight80.png in Resources */,
+				B072C9D319400C880055998F /* kaiguan_400_400.png in Resources */,
 				B02688D1191F77470005CE52 /* Main_iPad.storyboard in Resources */,
 				B02688D6191F77470005CE52 /* Images.xcassets in Resources */,
 				B090E252192B794100934BFB /* NEWLOGO -Highlight29.png in Resources */,
 				B090E255192B794100934BFB /* NEWLOGO -Highlight76.png in Resources */,
+				B0579F32193ECAAB0024B73F /* lamp_OFF_480_285.png in Resources */,
+				B072CA0119400C910055998F /* NULL_400_400.png in Resources */,
 				B090E251192B794100934BFB /* NEWLOGO -Highlight.png in Resources */,
 				B090E257192B794100934BFB /* NEWLOGO -Highlight120.png in Resources */,
 				B026894E191F832D0005CE52 /* WebcamViewController.xib in Resources */,
+				B072C9D219400C880055998F /* hot_400_400.png in Resources */,
 				B02688CE191F77470005CE52 /* Main_iPhone.storyboard in Resources */,
+				B072C9FB19400C910055998F /* down_400_400.png in Resources */,
 				B0268935191F80770005CE52 /* RoomsViewController.xib in Resources */,
+				B072CA0019400C910055998F /* mute_400_400.png in Resources */,
+				B072C9CE19400C880055998F /* cold_400_400.png in Resources */,
 				B090E25B192B794100934BFB /* TurnOFFImage1.png in Resources */,
 				B026893F191F82A40005CE52 /* SetViewController.xib in Resources */,
+				B072C9FD19400C910055998F /* kaiguan_400_400.png in Resources */,
+				B072C9FF19400C910055998F /* menu_400_400.png in Resources */,
+				B0A07839193F226000405252 /* soc_OFF_480_480.png in Resources */,
+				B0A0782B193F152400405252 /* SocShowViewController.xib in Resources */,
+				B0A07835193F155200405252 /* WebcamShowViewController.xib in Resources */,
+				B072C9D519400C880055998F /* rightleft_400_400.png in Resources */,
 				B0268958191F83610005CE52 /* TVViewController.xib in Resources */,
+				B072C9F519400C910055998F /* 5_400_400.png in Resources */,
+				B072C9F419400C910055998F /* 4_400_400.png in Resources */,
 				B02688C5191F77460005CE52 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,16 +959,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B032C6671924C43100C08402 /* LKDBHelper.m in Sources */,
+				B0A07825193F151200405252 /* AirconShowViewController.m in Sources */,
 				B0268948191F82FE0005CE52 /* LampViewController.m in Sources */,
 				B0268943191F82D50005CE52 /* AddDevViewController.m in Sources */,
 				B0850F72192605630047419F /* commandModel.m in Sources */,
 				B0F6EE3A19387C3500A114E1 /* ScenaryAddCommandViewController.m in Sources */,
 				B032C6661924C43100C08402 /* LKDB+Mapping.m in Sources */,
+				B0A0782A193F152400405252 /* SocShowViewController.m in Sources */,
+				B0A0782F193F153B00405252 /* CuttainShowViewController.m in Sources */,
 				B0268912191F7E920005CE52 /* roomSource.m in Sources */,
 				B0268939191F80D80005CE52 /* ScenaryViewController.m in Sources */,
 				B032C6411924C34F00C08402 /* RoomsAddViewController.m in Sources */,
 				B032C6571924C42400C08402 /* FMResultSet.m in Sources */,
 				B026892D191F7F710005CE52 /* scenaryMgr.m in Sources */,
+				B0579F2C193EB99A0024B73F /* LampShowViewController.m in Sources */,
+				B0A07820193F14FA00405252 /* TVShowViewController.m in Sources */,
 				B032C6651924C43100C08402 /* LKDB+Manager.m in Sources */,
 				B032C66A1924C43100C08402 /* NSObject+LKModel.m in Sources */,
 				B0268952191F834B0005CE52 /* CurtainViewController.m in Sources */,
@@ -711,6 +992,7 @@
 				B032C6521924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				B0B8D64E192CBEC4009743B6 /* RoomsDetailViewController.m in Sources */,
 				B0850F6F192605510047419F /* deviceModel.m in Sources */,
+				B0A07834193F155200405252 /* WebcamShowViewController.m in Sources */,
 				B0268961191F83DA0005CE52 /* AirconViewController.m in Sources */,
 				B02688FC191F79670005CE52 /* deviceTable.m in Sources */,
 				B0268906191F7DE70005CE52 /* scenaryTable.m in Sources */,

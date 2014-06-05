@@ -56,6 +56,11 @@
         ladVc.title = self.title;
         [self.navigationController pushViewController:ladVc animated:YES];
     }
+    else {
+        CuttainShowViewController *tvsvc = [[CuttainShowViewController alloc] init];
+        tvsvc.title = sender.titleLabel.text;
+        [self.navigationController pushViewController:tvsvc animated:YES];
+    }
     
 }
 

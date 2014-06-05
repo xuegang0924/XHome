@@ -56,5 +56,20 @@
     return [_deviceSrc deleteDevice:DeviceName withRoomName:whichRoomName];
 }
 
+/**
+ *得到一个设备类型
+ */
+- (NSString *)getDeviceType:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName
+{
+    deviceTable *dt = [[deviceTable alloc] init];
+    for (dt in self.devicesArry) {
+        if ([dt.deviceName isEqualToString:DeviceName] && [dt.roomID isEqualToString:whichRoomName]) {
+            return dt.deviceType;
+        }
+    }
+    
+    return nil;
+
+}
 
 @end

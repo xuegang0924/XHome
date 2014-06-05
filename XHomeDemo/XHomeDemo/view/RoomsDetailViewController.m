@@ -60,6 +60,50 @@
         radVc.title = self.title;
         [self.navigationController pushViewController:radVc animated:YES];
     }
+    //加载不同的设备控制界面
+    else {
+        NSString *strDevRoom = self.title;
+        NSString *strDevnName = sender.titleLabel.text;
+//        NSString *s = [NSString alloc] initWithf
+        NSString *strDevType = [self.deviceCtr getDeviceType:strDevnName withRoomName:strDevRoom];
+        if ([strDevType isEqualToString:@"电灯"]) {
+            LampShowViewController *lsvc = [[LampShowViewController alloc] init];
+            NSString *strVcTitle = [[NSString alloc] initWithFormat:@"%@-%@",self.title,sender.titleLabel.text];
+            lsvc.title = strVcTitle;
+            [self.navigationController pushViewController:lsvc animated:YES];
+        } else if ([strDevType isEqualToString:@"电视"]) {
+            TVShowViewController *lsvc = [[TVShowViewController alloc] init];
+            NSString *strVcTitle = [[NSString alloc] initWithFormat:@"%@-%@",self.title,sender.titleLabel.text];
+            lsvc.title = strVcTitle;
+            [self.navigationController pushViewController:lsvc animated:YES];
+            
+        } else if ([strDevType isEqualToString:@"空调"]) {
+            AirconShowViewController *lsvc = [[AirconShowViewController alloc] init];
+            NSString *strVcTitle = [[NSString alloc] initWithFormat:@"%@-%@",self.title,sender.titleLabel.text];
+            lsvc.title = strVcTitle;
+            [self.navigationController pushViewController:lsvc animated:YES];
+            
+        } else if ([strDevType isEqualToString:@"插座"]) {
+            SocShowViewController *lsvc = [[SocShowViewController alloc] init];
+            NSString *strVcTitle = [[NSString alloc] initWithFormat:@"%@-%@",self.title,sender.titleLabel.text];
+            lsvc.title = strVcTitle;
+            [self.navigationController pushViewController:lsvc animated:YES];
+            
+        } else if ([strDevType isEqualToString:@"窗帘"]) {
+            CuttainShowViewController *lsvc = [[CuttainShowViewController alloc] init];
+            NSString *strVcTitle = [[NSString alloc] initWithFormat:@"%@-%@",self.title,sender.titleLabel.text];
+            lsvc.title = strVcTitle;
+            [self.navigationController pushViewController:lsvc animated:YES];
+            
+        } else if ([strDevType isEqualToString:@"摄像头"]) {
+            WebcamShowViewController *lsvc = [[WebcamShowViewController alloc] init];
+            NSString *strVcTitle = [[NSString alloc] initWithFormat:@"%@-%@",self.title,sender.titleLabel.text];
+            lsvc.title = strVcTitle;
+            [self.navigationController pushViewController:lsvc animated:YES];
+            
+        }
+        
+    }
 
 }
 

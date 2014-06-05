@@ -56,7 +56,13 @@
         AddDevViewController *ladVc = [[AddDevViewController alloc] init];
         ladVc.title = self.title;
         [self.navigationController pushViewController:ladVc animated:YES];
+    } else {
+        LampShowViewController *lsvc = [[LampShowViewController alloc] init];
+        lsvc.title = sender.titleLabel.text;
+        [self.navigationController pushViewController:lsvc animated:YES];
     }
+    
+    
     
 }
 

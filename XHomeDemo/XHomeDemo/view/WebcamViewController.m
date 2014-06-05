@@ -54,8 +54,14 @@
     //如果是添加设备按钮按下
     if (sender.tag == ADDNEW_LAMP_BUTTON_TAG) {
         AddDevViewController *ladVc = [[AddDevViewController alloc] init];
-        ladVc.title = self.title;
+        ladVc.title = sender.titleLabel.text;
         [self.navigationController pushViewController:ladVc animated:YES];
+    }
+    
+    else {
+        WebcamShowViewController *tvsvc = [[WebcamShowViewController alloc] init];
+        tvsvc.title = self.title;
+        [self.navigationController pushViewController:tvsvc animated:YES];
     }
     
 }

@@ -57,6 +57,12 @@
         [self.navigationController pushViewController:tvadVc animated:YES];
     }
     
+    else {
+        TVShowViewController *tvsvc = [[TVShowViewController alloc] init];
+        tvsvc.title = sender.titleLabel.text;
+        [self.navigationController pushViewController:tvsvc animated:YES];
+    }
+    
 }
 
 
