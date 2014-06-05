@@ -58,6 +58,12 @@
         [self.navigationController pushViewController:ladVc animated:YES];
     }
     
+    else {
+        AirconShowViewController *tvsvc = [[AirconShowViewController alloc] init];
+        tvsvc.title = sender.titleLabel.text;
+        [self.navigationController pushViewController:tvsvc animated:YES];
+    }
+    
 }
 
 

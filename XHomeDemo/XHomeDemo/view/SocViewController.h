@@ -10,6 +10,7 @@
 #import "deviceMgr.h"
 #import "ButtonTagDef.h"
 #import "AddDevViewController.h"
+#import "SocShowViewController.h"
 
 @interface SocViewController : UIViewController<UIAlertViewDelegate>
 
