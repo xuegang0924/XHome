@@ -13,8 +13,13 @@
 @interface commandTable : NSObject
 
 //属性
-@property(copy,nonatomic)NSString *commandCode;
-@property(strong,nonatomic)deviceTable *deviceTableID;
+@property(strong,nonatomic)NSString *commandName;
+@property(strong,nonatomic)NSString *commandCode;
+@property(strong,nonatomic)NSString *commandDevice;
+@property(strong,nonatomic)NSString *commandRoom;
+@property(strong,nonatomic)NSString *roomDeviceCommand;
+@property(strong,nonatomic)NSString *commandScenery;
+@property BOOL hasCommand;
 
 
 @end
