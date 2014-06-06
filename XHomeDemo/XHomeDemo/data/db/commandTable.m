@@ -31,7 +31,7 @@
     //    [self setUserCalculateForCN:@"address"];
     
     //enable the column binding property name
-    [self setTableColumnName:@"MyRoomName" bindingPropertyName:@"roomName"];
+    [self setTableColumnName:@"MyRoomDeviceCommand" bindingPropertyName:@"roomDeviceCommand"];
     
     //You can create a table here
     //[[self getUsingLKDBHelper] createTableWithModelClass:self];
@@ -114,7 +114,7 @@
 //主键
 +(NSString *)getPrimaryKey
 {
-    return @"roomName";
+    return @"roomDeviceCommand";
 }
 
 //+(NSArray *)getPrimaryKeyUnionArray
@@ -125,7 +125,7 @@
 //表名
 +(NSString *)getTableName
 {
-    return @"LKTestTable";
+    return @"commandTable";
 }
 
 //表版本

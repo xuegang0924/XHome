@@ -15,6 +15,7 @@
 @property(strong,nonatomic)NSString *roomDevName;
 @property(strong,nonatomic)NSString *deviceName;
 @property(strong,nonatomic)NSString *deviceType;
+@property(strong,nonatomic)NSString *deviceState;
 
 
 //@property(strong,nonatomic)roomTable *roomTableID;
