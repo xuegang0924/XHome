@@ -61,6 +61,7 @@
  */
 - (NSString *)getDeviceType:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName
 {
+    [self initDevices:whichRoomName];
     deviceTable *dt = [[deviceTable alloc] init];
     for (dt in self.devicesArry) {
         if ([dt.deviceName isEqualToString:DeviceName] && [dt.roomID isEqualToString:whichRoomName]) {
@@ -70,6 +71,34 @@
     
     return nil;
 
+}
+
+/**
+ *得到一个设备运行状态
+ */
+- (NSString *)getDeviceState:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName
+{
+    [self initDevices:whichRoomName];
+    deviceTable *dt = [[deviceTable alloc] init];
+    
+    for (dt in self.devicesArry) {
+        if ([dt.deviceName isEqualToString:DeviceName] && [dt.roomID isEqualToString:whichRoomName]) {
+            return dt.deviceState;
+        }
+    }
+    
+    return nil;
+}
+
+
+
+/**
+ *设置一个设备运行状态
+ */
+- (BOOL)setDeviceState:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName withDeviceState:(NSString *)deviceState
+{
+    
+    return [_deviceSrc updateDevice:DeviceName withRoomName:whichRoomName withDevState:deviceState];
 }
 
 @end

@@ -52,25 +52,6 @@
 //添加一个新设备
 -(BOOL)addNewDevice:(NSString *)newDeviceName withRoomName:(NSString *)whichRoomName withDeviceType:(NSString *)deviceType
 {
-
-    
-//    NSMutableString *roomDeviceName = [[NSMutableString alloc] init];
-//    [roomDeviceName appendString:whichRoomName];
-//    [roomDeviceName appendString:newDeviceName];
-//    self.deviceTb.roomDevName = roomDeviceName;
-//    
-//    self.deviceTb.deviceName = newDeviceName;
-//    self.deviceTb.roomID = whichRoomName;
-////    roomTable *rt = [[roomTable alloc] init];
-////    rt.roomName = whichRoomName;
-////    self.deviceTb.roomTableID = rt;
-//    
-//    self.deviceMArry = [self.dbHelper search:[deviceTable class] column:nil where:nil orderBy:nil offset:0 count:0];
-//    NSLog(@"rowID1:%d", self.deviceTb.rowid);
-//    BOOL ret = [self.dbHelper insertWhenNotExists:self.deviceTb];
-////    BOOL ret = [self.dbHelper insertToDB:self.deviceTb];
-//    NSLog(@"rowID2:%d", self.deviceTb.rowid);
-//    return ret;
     
     
     deviceTable *addDevTb = [[deviceTable alloc] init];
@@ -81,6 +62,7 @@
     addDevTb.roomID = whichRoomName;
     addDevTb.deviceName = newDeviceName;
     addDevTb.deviceType = deviceType;
+    addDevTb.deviceState = @"OFF";
 
     NSLog(@"rowID1:%d", addDevTb.rowid);
     BOOL ret = [self.dbHelper insertWhenNotExists:addDevTb];
@@ -134,5 +116,20 @@
     return ret;
 }
 
+
+//更新一个设备状态
+-(BOOL)updateADevice:(NSString *)deviceName withRoomName:(NSString *)whichRoomName withDevState:(NSString *)deviceState
+{
+    NSString *str = [[NSString alloc] initWithFormat:@"roomID = '%@' and deviceName = '%@'",whichRoomName,deviceName];
+    NSMutableArray *marryDev = [self.dbHelper search:[deviceTable class] column:nil where:str orderBy:nil offset:0 count:0];
+    
+    deviceTable *dt = [marryDev objectAtIndex:0];
+    dt.deviceState = deviceState;
+    
+    
+    NSString *sql = [[NSString alloc] initWithFormat:@"roomID='%@' and deviceName = '%@'",whichRoomName,deviceName];    
+    BOOL ret = [self.dbHelper updateToDB:dt where:sql];
+    return  ret;
+}
 
 @end

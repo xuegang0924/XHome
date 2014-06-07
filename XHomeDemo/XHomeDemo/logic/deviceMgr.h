@@ -39,4 +39,14 @@
  *得到一个设备类型
  */
 - (NSString *)getDeviceType:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName;
+
+/**
+ *得到一个设备运行状态
+ */
+- (NSString *)getDeviceState:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName;
+
+/**
+ *设置一个设备运行状态
+ */
+- (BOOL)setDeviceState:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName withDeviceState:(NSString *)deviceState;
 @end

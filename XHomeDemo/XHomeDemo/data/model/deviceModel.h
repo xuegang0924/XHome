@@ -28,4 +28,7 @@
 //删除一个设备
 -(BOOL)deleteADevice:(NSString *)DeviceName  withRoomName:(NSString *)whichRoomName;
 
+//更新一个设备状态
+-(BOOL)updateADevice:(NSString *)deviceName withRoomName:(NSString *)whichRoomName withDevState:(NSString *)deviceState;
+//-(BOOL)updateADevice:(NSString *)deviceName withRoomName:(NSString *)whichRoomName withDevState:(NSString *)deviceState;
 @end

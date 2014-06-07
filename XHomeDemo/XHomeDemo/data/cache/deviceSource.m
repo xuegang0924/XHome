@@ -57,4 +57,12 @@
     return [_deviceMd deleteADevice:DeviceName withRoomName:whichRoomName];
 }
 
+/**
+ *更新一个设备的状态
+ */
+- (BOOL)updateDevice:(NSString *)deviceName withRoomName:(NSString *)whichRoomName withDevState:(NSString *)deviceState
+{
+    return [_deviceMd updateADevice:deviceName withRoomName:whichRoomName withDevState:deviceState];
+}
+
 @end

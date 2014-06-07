@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "commandMgr.h"
+#import "deviceMgr.h"
 
 @interface LampShowViewController : UIViewController
 
-@property(strong,nonatomic)NSString *strDevRoom;
+@property(strong,nonatomic)commandMgr *commandCtr;
+@property(strong,nonatomic)deviceMgr *deviceCtr;
+
 @property(strong,nonatomic)NSString *strDeviceName;
+@property(strong,nonatomic)NSString *strCommanName;
+@property(strong,nonatomic)NSString *strRoomName;
 
 @end

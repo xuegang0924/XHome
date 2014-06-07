@@ -71,6 +71,7 @@
  */
 - (NSString *)getCommandData:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName
 {
+    [self initCommandsWithRoomName:whichRoomName withDeviceName:whichDevName];
     commandTable *ct = [[commandTable alloc] init];
     for (ct in self.commandsArry) {
         if ([ct.commandName isEqualToString:commandName] && [ct.commandDevice isEqualToString:whichDevName] && [ct.commandRoom isEqualToString:whichRoomName]) {

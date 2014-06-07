@@ -34,4 +34,9 @@
  *删除一个房间条目
  */
 - (BOOL)deleteDevice:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName;
+
+/**
+ *更新一个设备的状态
+ */
+- (BOOL)updateDevice:(NSString *)deviceName withRoomName:(NSString *)whichRoomName withDevState:(NSString *)deviceState;
 @end
