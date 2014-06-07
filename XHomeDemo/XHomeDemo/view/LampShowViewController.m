@@ -20,6 +20,7 @@
 @synthesize strCommanName;
 @synthesize commandCtr;
 @synthesize deviceCtr;
+@synthesize dataTrans;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +39,10 @@
         
         if (!self.deviceCtr) {
             self.deviceCtr = [[deviceMgr alloc]  init];
+        }
+        
+        if (!self.dataTrans) {
+            self.dataTrans = [[DataTransfer alloc] init];
         }
     }
     return self;
@@ -71,6 +76,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [self.dataTrans disconnectSocket];
+}
 
 - (void)btnShortClick:(UIButton *)sender
 {
@@ -95,6 +105,11 @@
         } else {
             
             //TODO2:将取得的commandData数据 经过socket 发送出去
+            int IDnum = [self.deviceCtr getDeviceIDNumber:self.strDeviceName withRoomName:strRoomName];
+            if (IDnum < 0) {
+                NSLog(@"Error there is no dev");
+            }
+            [self.dataTrans sendData:strCommandData withDevType:@"电灯" withDevID:IDnum withCom:YES];
             NSLog(@"%@",strCommandData);
             
             //TODO3:等待socket的回复数据 是否顺利执行命令
@@ -121,6 +136,11 @@
         } else {
             
             //TODO2:将取得的commandData数据 经过socket 发送出去
+            int IDnum = [self.deviceCtr getDeviceIDNumber:self.strDeviceName withRoomName:strRoomName];
+            if (IDnum < 0) {
+                NSLog(@"Error there is no dev");
+            }
+            [self.dataTrans sendData:strCommandData withDevType:@"电灯" withDevID:IDnum withCom:YES];
             NSLog(@"%@",strCommandData);
             
             //TODO3:等待socket的回复数据 是否顺利执行命令

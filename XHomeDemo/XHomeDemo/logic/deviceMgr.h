@@ -49,4 +49,10 @@
  *设置一个设备运行状态
  */
 - (BOOL)setDeviceState:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName withDeviceState:(NSString *)deviceState;
+
+/**
+ *获得一个设备的ID号 rowID
+ */
+- (int)getDeviceIDNumber:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName;
+
 @end

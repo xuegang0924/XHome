@@ -133,6 +133,9 @@
 		B0A0783C193F22A200405252 /* NEWLOGO 若愚安智.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A0783B193F22A200405252 /* NEWLOGO 若愚安智.png */; };
 		B0A07840193F284B00405252 /* curtain_OFF_480_480.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A0783E193F284B00405252 /* curtain_OFF_480_480.png */; };
 		B0A07841193F284B00405252 /* curtain_ON_480_480.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A0783F193F284B00405252 /* curtain_ON_480_480.png */; };
+		B0B68ACA19431F0100915592 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B68AC719431F0100915592 /* GCDAsyncSocket.m */; };
+		B0B68ACB19431F0100915592 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B68AC919431F0100915592 /* GCDAsyncUdpSocket.m */; };
+		B0B68ACF194320AD00915592 /* DataTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B68ACE194320AD00915592 /* DataTransfer.m */; };
 		B0B8D64E192CBEC4009743B6 /* RoomsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B8D64C192CBEC4009743B6 /* RoomsDetailViewController.m */; };
 		B0B8D64F192CBEC4009743B6 /* RoomsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0B8D64D192CBEC4009743B6 /* RoomsDetailViewController.xib */; };
 		B0F6EE3A19387C3500A114E1 /* ScenaryAddCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6EE3819387C3500A114E1 /* ScenaryAddCommandViewController.m */; };
@@ -320,6 +323,12 @@
 		B0A0783B193F22A200405252 /* NEWLOGO 若愚安智.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NEWLOGO 若愚安智.png"; path = "images/NEWLOGO 若愚安智.png"; sourceTree = "<group>"; };
 		B0A0783E193F284B00405252 /* curtain_OFF_480_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curtain_OFF_480_480.png; sourceTree = "<group>"; };
 		B0A0783F193F284B00405252 /* curtain_ON_480_480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curtain_ON_480_480.png; sourceTree = "<group>"; };
+		B0B68AC619431F0100915592 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		B0B68AC719431F0100915592 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		B0B68AC819431F0100915592 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		B0B68AC919431F0100915592 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		B0B68ACD194320AD00915592 /* DataTransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataTransfer.h; path = data/DataTransfer/DataTransfer.h; sourceTree = "<group>"; };
+		B0B68ACE194320AD00915592 /* DataTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataTransfer.m; path = data/DataTransfer/DataTransfer.m; sourceTree = "<group>"; };
 		B0B8D64B192CBEC4009743B6 /* RoomsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsDetailViewController.h; path = view/RoomsDetailViewController.h; sourceTree = "<group>"; };
 		B0B8D64C192CBEC4009743B6 /* RoomsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsDetailViewController.m; path = view/RoomsDetailViewController.m; sourceTree = "<group>"; };
 		B0B8D64D192CBEC4009743B6 /* RoomsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomsDetailViewController.xib; path = view/RoomsDetailViewController.xib; sourceTree = "<group>"; };
@@ -406,6 +415,8 @@
 		B02688F3191F78500005CE52 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				B0B68AC519431F0100915592 /* TCP */,
+				B0B68ACC1943205000915592 /* DataTransfer */,
 				B02688F8191F78B60005CE52 /* db */,
 				B02688F6191F78940005CE52 /* model */,
 				B02688F7191F78AA0005CE52 /* cache */,
@@ -819,6 +830,27 @@
 			path = images/curtain;
 			sourceTree = "<group>";
 		};
+		B0B68AC519431F0100915592 /* TCP */ = {
+			isa = PBXGroup;
+			children = (
+				B0B68AC619431F0100915592 /* GCDAsyncSocket.h */,
+				B0B68AC719431F0100915592 /* GCDAsyncSocket.m */,
+				B0B68AC819431F0100915592 /* GCDAsyncUdpSocket.h */,
+				B0B68AC919431F0100915592 /* GCDAsyncUdpSocket.m */,
+			);
+			name = TCP;
+			path = data/TCP;
+			sourceTree = "<group>";
+		};
+		B0B68ACC1943205000915592 /* DataTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				B0B68ACD194320AD00915592 /* DataTransfer.h */,
+				B0B68ACE194320AD00915592 /* DataTransfer.m */,
+			);
+			name = DataTransfer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -990,6 +1022,7 @@
 				B026894D191F832D0005CE52 /* WebcamViewController.m in Sources */,
 				B026890F191F7E740005CE52 /* deviceSource.m in Sources */,
 				B032C6521924C42400C08402 /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
+				B0B68ACB19431F0100915592 /* GCDAsyncUdpSocket.m in Sources */,
 				B0B8D64E192CBEC4009743B6 /* RoomsDetailViewController.m in Sources */,
 				B0850F6F192605510047419F /* deviceModel.m in Sources */,
 				B0A07834193F155200405252 /* WebcamShowViewController.m in Sources */,
@@ -998,6 +1031,8 @@
 				B0268906191F7DE70005CE52 /* scenaryTable.m in Sources */,
 				B0268915191F7EA80005CE52 /* scenarySource.m in Sources */,
 				B026895C191F83850005CE52 /* SocViewController.m in Sources */,
+				B0B68ACA19431F0100915592 /* GCDAsyncSocket.m in Sources */,
+				B0B68ACF194320AD00915592 /* DataTransfer.m in Sources */,
 				B0268927191F7F4E0005CE52 /* deviceMgr.m in Sources */,
 				B0268909191F7DFC0005CE52 /* roomTable.m in Sources */,
 				B032C6541924C42400C08402 /* FMDatabaseAdditions.m in Sources */,

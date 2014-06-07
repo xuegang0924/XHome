@@ -101,4 +101,22 @@
     return [_deviceSrc updateDevice:DeviceName withRoomName:whichRoomName withDevState:deviceState];
 }
 
+
+
+/**
+ *获得一个设备的ID号 rowID
+ */
+- (int)getDeviceIDNumber:(NSString *)DeviceName withRoomName:(NSString *)whichRoomName
+{
+    [self initDevices:whichRoomName];
+    deviceTable *dt = [[deviceTable alloc] init];
+    
+    for (dt in self.devicesArry) {
+        if ([dt.deviceName isEqualToString:DeviceName] && [dt.roomID isEqualToString:whichRoomName]) {
+            return (int)dt.rowid;
+        }
+    }
+    
+    return -1;    
+}
 @end

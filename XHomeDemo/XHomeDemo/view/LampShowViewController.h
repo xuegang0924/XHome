@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "commandMgr.h"
 #import "deviceMgr.h"
+#import "DataTransfer.h"
 
 @interface LampShowViewController : UIViewController
 
 @property(strong,nonatomic)commandMgr *commandCtr;
 @property(strong,nonatomic)deviceMgr *deviceCtr;
+@property(strong,nonatomic)DataTransfer *dataTrans;
 
 @property(strong,nonatomic)NSString *strDeviceName;
 @property(strong,nonatomic)NSString *strCommanName;
