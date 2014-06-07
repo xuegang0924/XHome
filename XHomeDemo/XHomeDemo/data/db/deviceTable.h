@@ -17,8 +17,6 @@
 @property(strong,nonatomic)NSString *deviceType;
 @property(strong,nonatomic)NSString *deviceState;
 
-
-//@property(strong,nonatomic)roomTable *roomTableID;
 @property(strong,nonatomic)NSString *roomID;
 
 @end

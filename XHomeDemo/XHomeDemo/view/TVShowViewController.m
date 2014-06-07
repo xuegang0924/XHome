@@ -13,28 +13,10 @@
 @end
 
 @implementation TVShowViewController
-//@synthesize btnDown;
-//@synthesize btnUP;
-//@synthesize btnONOFF;
-//@synthesize btn0;
-//@synthesize btn1;
-//@synthesize btn2;
-//@synthesize btn3;
-//@synthesize btn4;
-//@synthesize btn5;
-//@synthesize btn6;
-//@synthesize btn7;
-//@synthesize btn8;
-//@synthesize btn9;
-//@synthesize btnCustom;
-//@synthesize btnGoback;
-//@synthesize btnLeft;
-//@synthesize btnMenu;
-//@synthesize btnMute;
-//@synthesize btnNULL;
-//@synthesize btnOK;
-//@synthesize btnRight;
-//@synthesize btnSignelSource;
+@synthesize commandCtr;
+@synthesize strCommanName;
+@synthesize strDeviceName;
+@synthesize strRoomName;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,6 +24,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        if (!self.commandCtr) {
+            self.commandCtr = [[commandMgr alloc] init];
+        }
     }
     return self;
 }
@@ -50,14 +35,52 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSRange rg = [self.title rangeOfString:@"-"];
+    NSString *RoomName = [self.title substringToIndex:rg.location];
+    NSString *devName = [self.title substringFromIndex:(rg.location + rg.length)];
+    self.strRoomName = RoomName;
+    self.strDeviceName = devName;
+    
+    [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
+    
     self.view.backgroundColor = [UIColor blackColor];
+
+    [self updateView];
+    
+}
+
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (void)btnShortClick:(UIButton *)sender
+{
+    NSLog(@"ss");
+  
+    if (sender.tag == 100) {    //comONOFF
+        NSString *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
+        if (strCommandData.length == 0) {
+            NSLog(@"NOCommand");
+        }
+    }
+
+}
+
+
+- (void)updateView
+{
     //添加一个scrollView
     UIScrollView *scrv = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     scrv.contentSize = CGSizeMake(scrv.bounds.size.width, scrv.bounds.size.height * 2);
     scrv.backgroundColor = [UIColor blackColor];
     [scrv setPagingEnabled:YES];
     [self.view addSubview:scrv];
-
+    
     
 #define X3 110/4.0
 #define X4 40/5.0
@@ -89,7 +112,7 @@
     [btnSignelSource addTarget:self action:@selector(btnShortClick:) forControlEvents:UIControlEventTouchUpInside];
     [scrv addSubview:btnSignelSource];
     [scrv setContentSize:CGSizeMake(self.view.bounds.size.width, btnSignelSource.frame.origin.y + BTNW)];
-
+    
     UIButton *btnMute = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnMute.frame = CGRectMake(LENGW*3 +X4, LENGH, BTNW, BTNW);
     [btnMute setBackgroundImage:[UIImage imageNamed:@"mute_400_400.png"] forState:UIControlStateNormal];
@@ -141,9 +164,9 @@
     [scrv addSubview:btnRight];
     [scrv setContentSize:CGSizeMake(self.view.bounds.size.width, btnRight.frame.origin.y + BTNW)];
     
-
     
-
+    
+    
     
     UIButton *btnCustom = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnCustom.frame = CGRectMake(MIDSIZE - BTNW -20, LENGH + (BTNW + 20)*4, BTNW, BTNW);
@@ -170,9 +193,9 @@
     [scrv addSubview:btnNULL];
     [scrv setContentSize:CGSizeMake(self.view.bounds.size.width, btnNULL.frame.origin.y + BTNW)];
     
- ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-   
+    
 #define LENGW3    (BTNW+X3)
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btn1.frame = CGRectMake(X3, ONPAGE_HIGHTE, BTNW, BTNW);
@@ -260,7 +283,7 @@
     [scrv addSubview:btn0];
     [scrv setContentSize:CGSizeMake(self.view.bounds.size.width, btn0.frame.origin.y + BTNW)];
     
-
+    
     UIButton *btnCustom1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnCustom1.frame = CGRectMake(X3, ONPAGE_HIGHTE +(BTNW +20)*4, BTNW, BTNW);
     [btnCustom1 setBackgroundImage:[UIImage imageNamed:@"custom_400_400.png"] forState:UIControlStateNormal];
@@ -276,7 +299,7 @@
     [btnCustom2 addTarget:self action:@selector(btnShortClick:) forControlEvents:UIControlEventTouchUpInside];
     [scrv addSubview:btnCustom2];
     [scrv setContentSize:CGSizeMake(self.view.bounds.size.width, btnCustom2.frame.origin.y + BTNW)];
-   
+    
     UIButton *btnCustom3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnCustom3.frame = CGRectMake(LENGW3*2 +X3, ONPAGE_HIGHTE +(BTNW +20)*4, BTNW, BTNW);
     [btnCustom3 setBackgroundImage:[UIImage imageNamed:@"custom_400_400.png"] forState:UIControlStateNormal];
@@ -284,22 +307,6 @@
     [btnCustom3 addTarget:self action:@selector(btnShortClick:) forControlEvents:UIControlEventTouchUpInside];
     [scrv addSubview:btnCustom3];
     [scrv setContentSize:CGSizeMake(self.view.bounds.size.width, btnCustom3.frame.origin.y + BTNW*2)];
-    
 }
 
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-- (void)btnShortClick:(UIButton *)sender
-{
-    NSLog(@"ss");
-  
-
-}
 @end
