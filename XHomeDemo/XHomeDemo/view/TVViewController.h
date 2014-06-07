@@ -15,4 +15,6 @@
 
 @interface TVViewController : UIViewController<UIAlertViewDelegate>
 
-@property(strong,nonatomic)deviceMgr *deviceCtr;@end
+@property(strong,nonatomic)deviceMgr *deviceCtr;
+
+@end

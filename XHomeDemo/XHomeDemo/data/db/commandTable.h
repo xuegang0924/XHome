@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "LKDBHelper.h"
-#import "deviceTable.h"
 
 @interface commandTable : NSObject
 
