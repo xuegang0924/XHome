@@ -19,8 +19,8 @@
 @property Byte bDataTrailer;
 @property short sDataLength;
 @property(strong,nonatomic)NSMutableData *mdataDataBuf;
-
-
+@property(strong,nonatomic)NSMutableData *mdataRecvDataBuf;
+@property(strong,nonatomic)NSThread *recvDataThread;
 /**
  *初始化socket
  */

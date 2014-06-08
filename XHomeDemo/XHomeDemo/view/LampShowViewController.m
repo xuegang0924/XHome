@@ -80,6 +80,9 @@
 {
     [super viewWillDisappear:YES];
     [self.dataTrans disconnectSocket];
+    [self.dataTrans.recvDataThread cancel];
+//    self.dataTrans = nil;
+    
 }
 
 - (void)btnShortClick:(UIButton *)sender
