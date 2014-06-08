@@ -47,7 +47,7 @@
  *(Byte)bDevID：设备的ID （传入数据表中的rowid即可）
  *(BOOL)bCom：是命令还是数据
  */
-- (BOOL)sendData:(NSString *)sendData withDevType:(NSString *)devType withDevID:(Byte)bDevID withCom:(BOOL)bCom;
+- (BOOL)sendData:(NSData *)sendData withDevType:(NSString *)devType withDevID:(Byte)bDevID withCom:(BOOL)bCom;
 
 
 - (void)disconnectSocket;

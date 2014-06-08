@@ -21,10 +21,10 @@
 -(NSMutableArray *)getCommandMArryWithRoomName:(NSString *)whichRoomName withDeviceName:(NSString *)whichDevName;
 
 //添加一个新设备
--(BOOL)addNewCommand:(NSString *)newCommandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)commandData;
+-(BOOL)addNewCommand:(NSString *)newCommandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)commandData;
 
 //更新一个设备
--(BOOL)updateACommand:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)newCommandData;
+-(BOOL)updateACommand:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)newCommandData;
 //删除一个设备
 -(BOOL)deleteACommand:(NSString *)commandName  withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName;
 

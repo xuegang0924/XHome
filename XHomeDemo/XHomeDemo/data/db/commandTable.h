@@ -13,7 +13,7 @@
 
 //属性
 @property(strong,nonatomic)NSString *commandName;
-@property(strong,nonatomic)NSString *commandCode;
+@property(strong,nonatomic)NSData *commandCode;
 @property(strong,nonatomic)NSString *commandDevice;
 @property(strong,nonatomic)NSString *commandRoom;
 @property(strong,nonatomic)NSString *roomDeviceCommand;

@@ -32,7 +32,7 @@
 /**
  *新增一个房间条目
  */
-- (BOOL)addCommand:(NSString *)newCommandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)commandData
+- (BOOL)addCommand:(NSString *)newCommandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)commandData
 {
     return [_commandMd addNewCommand:newCommandName withDeviceName:whichDevName withRoomName:whichRoomName withCommandData:commandData];
 }
@@ -41,7 +41,7 @@
 /**
  *更新一个房间条目
  */
-- (BOOL)updateCommand:(NSString *)commandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)newCommandData
+- (BOOL)updateCommand:(NSString *)commandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)newCommandData
 {
     return [_commandMd updateACommand:commandName withDeviceName:whichDevName withRoomName:whichRoomName withCommandData:newCommandData];
 }

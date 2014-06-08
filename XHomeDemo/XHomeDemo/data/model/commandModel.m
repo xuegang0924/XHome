@@ -47,7 +47,7 @@
 }
 
 //添加一个新设备
--(BOOL)addNewCommand:(NSString *)newCommandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)commandData
+-(BOOL)addNewCommand:(NSString *)newCommandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)commandData
 {
     
     NSMutableString *roomDeviceCommand = [[NSMutableString alloc] init];
@@ -75,7 +75,7 @@
 }
 
 //更新一个设备
--(BOOL)updateACommand:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)newCommandData
+-(BOOL)updateACommand:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)newCommandData
 {
     NSString *str = [[NSString alloc] initWithFormat:@"commandRoom = '%@' and commandDevice = '%@' and commandName = '%@'",whichRoomName,whichDevName,commandName];
     NSMutableArray *marryCom = [self.dbHelper search:[commandTable class] column:nil where:str orderBy:nil offset:0 count:0];

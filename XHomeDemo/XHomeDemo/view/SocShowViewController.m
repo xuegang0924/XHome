@@ -93,7 +93,7 @@
     if ([strDevState isEqualToString:@"ON"]) {
         self.strCommanName = @"COM_SOC_ON";
         
-        NSString *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
+        NSData *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
         if (strCommandData.length == 0) {
             NSLog(@"NOCommand");
             UIAlertView *alert=[[UIAlertView alloc] initWithTitle:self.title message:@"此按键还没有学习命令" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
@@ -101,8 +101,8 @@
             [alert show];
             
             
-            //TODO1:等待socket数据 将命令添加至按键对应的数据库
-            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:@"123456"];
+            //TODO1:等待socket数据 将命令添加至按键对应的数据库 //TODO:NSdata
+            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:nil];
             [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
             NSLog(@"%d",ret);
         } else {
@@ -124,7 +124,7 @@
     } else {
         self.strCommanName = @"COM_SOC_OFF";
         
-        NSString *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
+        NSData *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
         if (strCommandData.length == 0) {
             NSLog(@"NOCommand");
             UIAlertView *alert=[[UIAlertView alloc] initWithTitle:self.title message:@"此按键还没有学习命令" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
@@ -132,8 +132,8 @@
             [alert show];
             
             
-            //TODO1:等待socket数据 将命令添加至按键对应的数据库
-            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:@"123456"];
+            //TODO1:等待socket数据 将命令添加至按键对应的数据库 //TODO:NSdata
+            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:nil];
             [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
             NSLog(@"%d",ret);
         } else {

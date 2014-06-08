@@ -22,6 +22,7 @@
 @synthesize deviceCtr;
 @synthesize dataTrans;
 @synthesize myAlert;
+@synthesize bNeedAddBtnCommadFlag;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,6 +54,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.dataTrans.sendRecvDataDelegate = self;
+    
     self.view.backgroundColor = [UIColor blackColor];
     NSRange rg = [self.title rangeOfString:@"-"];
     self.strRoomName = [self.title substringToIndex:rg.location];
@@ -94,18 +98,18 @@
     if ([strDevState isEqualToString:@"ON"]) {
         self.strCommanName = @"COM_LAMP_ON";
         
-        NSString *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
+        NSData *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
         if (strCommandData.length == 0) {
             NSLog(@"NOCommand");
-            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:self.title message:@"此按键还没有学习命令" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
+            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:self.title message:@"此按键还没有学习命令,正在加载数据，请稍候..." delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
             alert.tag = 1;
             [alert show];
             
-            
-            //TODO1:等待socket数据 将命令添加至按键对应的数据库
-            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:@"123456"];
-            [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
-            NSLog(@"%d",ret);
+            self.bNeedAddBtnCommadFlag = YES;
+            //TODO1:等待socket数据 将命令添加至按键对应的数据库 //TODO:NSdata
+//            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:nil];
+//            [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
+//            NSLog(@"%d",ret);
         } else {
             
             //TODO2:将取得的commandData数据 经过socket 发送出去
@@ -125,9 +129,8 @@
     } else {
         self.strCommanName = @"COM_LAMP_OFF";
         
-        NSString *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
-        NSData *dataComData = [strCommandData dataUsingEncoding:6];
-        if (dataComData.length == 0) {
+        NSData *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
+        if (strCommandData.length == 0) {
             NSLog(@"NOCommand");
 //            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:self.title message:@"此按键还没有学习命令" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
 //            alert.tag = 1;
@@ -139,8 +142,8 @@
 //            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:@"123456"];
 //            [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
 //            NSLog(@"%d",ret);
-            self.dataTrans.sendRecvDataDelegate = self;
-
+            
+            self.bNeedAddBtnCommadFlag = YES;
 
             
         } else {
@@ -171,12 +174,15 @@
 #pragma mark----SendRecvSocketDataDelegate
 -(void)recvSocketData:(NSData *)recvData
 {
-    NSString *strCom = [[NSString alloc] initWithData:recvData encoding:6];
     
-     NSData *dataComData = [strCom dataUsingEncoding:6];
-    BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:strCom];
-    [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
-    NSLog(@"%d",ret);
+    if (self.bNeedAddBtnCommadFlag) {
+        self.bNeedAddBtnCommadFlag = NO;
+        NSData *comData = [recvData subdataWithRange:NSMakeRange(6, recvData.length-7)];
+        
+        BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:comData];
+        [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
+        NSLog(@"%d",ret);
+    }
     
 }
 @end

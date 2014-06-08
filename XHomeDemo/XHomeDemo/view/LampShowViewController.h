@@ -23,5 +23,6 @@
 @property(strong,nonatomic)NSString *strDeviceName;
 @property(strong,nonatomic)NSString *strCommanName;
 @property(strong,nonatomic)NSString *strRoomName;
+@property BOOL bNeedAddBtnCommadFlag;
 
 @end

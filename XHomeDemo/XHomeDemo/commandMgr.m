@@ -35,7 +35,7 @@
 /**
  *新增一个房间条目
  */
-- (BOOL)addNewCommand:(NSString *)newCommandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)commandData
+- (BOOL)addNewCommand:(NSString *)newCommandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)commandData
 {
     return [_commandSrc addCommand:newCommandName withDevName:whichDevName withRoomName:whichRoomName withCommandData:commandData];
 
@@ -45,7 +45,7 @@
 /**
  *更新一个房间条目
  */
-- (BOOL)updateCommand:(NSString *)commandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)newCommandData
+- (BOOL)updateCommand:(NSString *)commandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)newCommandData
 {
     return [_commandSrc updateCommand:commandName withDevName:whichDevName withRoomName:whichRoomName withCommandData:newCommandData];
 
@@ -69,7 +69,7 @@
 /**
  *得到设备上某个按钮对应的命令数据
  */
-- (NSString *)getCommandData:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName
+- (NSData *)getCommandData:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName
 {
     [self initCommandsWithRoomName:whichRoomName withDeviceName:whichDevName];
     commandTable *ct = [[commandTable alloc] init];

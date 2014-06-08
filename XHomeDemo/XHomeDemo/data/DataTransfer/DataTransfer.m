@@ -97,7 +97,7 @@
  *(Byte)bDevID：设备的ID （传入数据表中的rowid即可）
  *(BOOL)bCom：是命令还是数据
  */
-- (BOOL)sendData:(NSString *)sendData withDevType:(NSString *)devType withDevID:(Byte)bDevID withCom:(BOOL)bCom
+- (BOOL)sendData:(NSData *)sendData withDevType:(NSString *)devType withDevID:(Byte)bDevID withCom:(BOOL)bCom
 {
     BOOL ret = [self connectToHostAddrees];
     NSLog(@"%d",ret);
@@ -134,27 +134,30 @@
         self.bComOrData = 0x00;
     }
     
-    NSData *tempdSendData = [sendData dataUsingEncoding:6];
-    
-    int len = [sendData length];
-    Byte tmpData[len];
-    
-    for (int i = 0; i<len; i++) {
-        [tempdSendData getBytes:&tmpData[i] range:NSMakeRange(i, 1)];
-        tmpData[i] -= 1;
-        NSLog(@"%hhu",tmpData[i]);
-    }
-    NSData *dSendData = [[NSData alloc] initWithBytes:tmpData length:len];
+//    NSData *tempdSendData = [sendData dataUsingEncoding:6];
+//    
+//    int len = [sendData length];
+//    Byte tmpData[len];
+//    
+//    for (int i = 0; i<len; i++) {
+//        [tempdSendData getBytes:&tmpData[i] range:NSMakeRange(i, 1)];
+//        tmpData[i] -= 1;
+//        NSLog(@"%hhu",tmpData[i]);
+//    }
+    NSData *dSendData = [[NSData alloc] initWithData:sendData];
     
 //    NSString *s = [[NSString alloc] initWithData:dSendData encoding:NSASCIIStringEncoding];
 //    NSLog(@"%@",s);
     self.sDataLength = dSendData.length;
-
+    Byte bDataLenH = self.sDataLength >> 8;
+    Byte bDataLenL = self.sDataLength & 0xFF;
+    
     [self.mdataDataBuf appendBytes:&bDataHeader length:1];
     [self.mdataDataBuf appendBytes:&bDeviceType length:1];
     [self.mdataDataBuf appendBytes:&bDeviceID length:1];
     [self.mdataDataBuf appendBytes:&bComOrData length:1];
-    [self.mdataDataBuf appendBytes:&sDataLength length:2];
+    [self.mdataDataBuf appendBytes:&bDataLenH length:1];
+    [self.mdataDataBuf appendBytes:&bDataLenL length:1];
     [self.mdataDataBuf appendData:dSendData];
     [self.mdataDataBuf appendBytes:&bDataTrailer length:1];
 
@@ -200,6 +203,9 @@
                 NSMutableData *mdataTempData = [[NSMutableData alloc] initWithData:self.mdataRecvDataBuf];
                 [self.mdataRecvDataBuf setLength:0];
                 [self dealWithARecvPacktData:mdataTempData];
+                
+            } else if ((dataLen + 7) < self.mdataRecvDataBuf.length) { //接收数据错误重新接收
+                [self.mdataRecvDataBuf setLength:0];
             }
         }
     }
@@ -209,21 +215,19 @@
 {
     NSLog(@"dealWithData:%@",recvData);
     
-    //让每个字节+1
-    int len = [recvData length];
-    Byte tmpData[len];
-
-    for (int i = 0; i<len; i++) {
-        [recvData getBytes:&tmpData[i] range:NSMakeRange(i, 1)];
-        tmpData[i] += 1;
-        NSLog(@"%hhu",tmpData[i]);
-    }
-    NSData *sendData = [[NSData alloc] initWithBytes:tmpData length:len];
+    Byte header,trailer;
+    [recvData getBytes:&header range:NSMakeRange(0, 1)];
+    [recvData getBytes:&trailer range:NSMakeRange(recvData.length -1, 1)];
     
-    //使用代理将收的数据发出去
-    if ([self.sendRecvDataDelegate respondsToSelector:@selector(recvSocketData:)]) {
-        [self.sendRecvDataDelegate recvSocketData:sendData];
-        
+    if (header == 0x00 && trailer == 0xFF) {
+        //使用代理将收的数据发出去
+        if ([self.sendRecvDataDelegate respondsToSelector:@selector(recvSocketData:)])
+        {
+            [self.sendRecvDataDelegate recvSocketData:recvData];
+            
+        }
+    } else {
+        NSLog(@"DataError!");
     }
     
 }

@@ -24,13 +24,13 @@
 /**
  *新增一个房间条目
  */
-- (BOOL)addNewCommand:(NSString *)newCommandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)commandData;
+- (BOOL)addNewCommand:(NSString *)newCommandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)commandData;
 
 
 /**
  *更新一个房间条目
  */
-- (BOOL)updateCommand:(NSString *)commandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSString *)newCommandData;
+- (BOOL)updateCommand:(NSString *)commandName withDevName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName withCommandData:(NSData *)newCommandData;
 
 /**
  *删除一个房间条目
@@ -43,6 +43,6 @@
 /**
  *得到设备上某个按钮对应的命令数据
  */
-- (NSString *)getCommandData:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName;
+- (NSData *)getCommandData:(NSString *)commandName withDeviceName:(NSString *)whichDevName withRoomName:(NSString *)whichRoomName;
 
 @end
