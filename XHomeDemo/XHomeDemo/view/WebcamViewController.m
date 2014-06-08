@@ -54,7 +54,7 @@
     //如果是添加设备按钮按下
     if (sender.tag == ADDNEW_LAMP_BUTTON_TAG) {
         AddDevViewController *ladVc = [[AddDevViewController alloc] init];
-        ladVc.title = sender.titleLabel.text;
+        ladVc.title = self.title;
         [self.navigationController pushViewController:ladVc animated:YES];
     }
     

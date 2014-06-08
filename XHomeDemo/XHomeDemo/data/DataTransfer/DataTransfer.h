@@ -9,7 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "GCDAsyncSocket.h"
 
+@protocol SendRecvSocketDataDelegate <NSObject>
+
+-(void)recvSocketData:(NSData *)recvData;
+
+@end
+
+
 @interface DataTransfer : NSObject<GCDAsyncSocketDelegate>
+
+@property(assign,nonatomic)id <SendRecvSocketDataDelegate> sendRecvDataDelegate;
+
 
 @property(strong,nonatomic)GCDAsyncSocket *asyncSocket;
 @property Byte bDeviceType;
@@ -21,6 +31,9 @@
 @property(strong,nonatomic)NSMutableData *mdataDataBuf;
 @property(strong,nonatomic)NSMutableData *mdataRecvDataBuf;
 @property(strong,nonatomic)NSThread *recvDataThread;
+
+@property SEL m_act;
+@property id m_obj;
 /**
  *初始化socket
  */
@@ -38,5 +51,6 @@
 
 
 - (void)disconnectSocket;
+
 
 @end

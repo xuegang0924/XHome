@@ -21,6 +21,7 @@
 @synthesize commandCtr;
 @synthesize deviceCtr;
 @synthesize dataTrans;
+@synthesize myAlert;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -125,17 +126,23 @@
         self.strCommanName = @"COM_LAMP_OFF";
         
         NSString *strCommandData = [self.commandCtr getCommandData:self.strCommanName withDeviceName:self.strDeviceName withRoomName:self.strRoomName];
-        if (strCommandData.length == 0) {
+        NSData *dataComData = [strCommandData dataUsingEncoding:6];
+        if (dataComData.length == 0) {
             NSLog(@"NOCommand");
-            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:self.title message:@"此按键还没有学习命令" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
-            alert.tag = 1;
-            [alert show];
+//            UIAlertView *alert=[[UIAlertView alloc] initWithTitle:self.title message:@"此按键还没有学习命令" delegate:self cancelButtonTitle:@"取消" otherButtonTitles: nil];
+//            alert.tag = 1;
+//            [alert show];
             
             
             //TODO1:等待socket数据 将命令添加至按键对应的数据库
-            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:@"123456"];
-            [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
-            NSLog(@"%d",ret);
+            [[[UIAlertView alloc] initWithTitle:nil message:@"正在加载数据，请稍候..." delegate:self cancelButtonTitle: @"取消" otherButtonTitles: @"确定",nil] show];
+//            BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:@"123456"];
+//            [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
+//            NSLog(@"%d",ret);
+            self.dataTrans.sendRecvDataDelegate = self;
+
+
+            
         } else {
             
             //TODO2:将取得的commandData数据 经过socket 发送出去
@@ -161,11 +168,15 @@
 }
 
 
-
-
-
-
-
-
-
+#pragma mark----SendRecvSocketDataDelegate
+-(void)recvSocketData:(NSData *)recvData
+{
+    NSString *strCom = [[NSString alloc] initWithData:recvData encoding:6];
+    
+     NSData *dataComData = [strCom dataUsingEncoding:6];
+    BOOL ret = [self.commandCtr addNewCommand:self.strCommanName withDevName:self.strDeviceName withRoomName:self.strRoomName withCommandData:strCom];
+    [self.commandCtr initCommandsWithRoomName:self.strRoomName withDeviceName:self.strDeviceName];
+    NSLog(@"%d",ret);
+    
+}
 @end

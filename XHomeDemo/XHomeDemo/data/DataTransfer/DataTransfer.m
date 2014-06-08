@@ -21,6 +21,11 @@
 @synthesize bDataTrailer;
 @synthesize recvDataThread;
 
+@synthesize sendRecvDataDelegate;
+
+@synthesize m_act;
+@synthesize m_obj;
+
 
 /**
  *初始化socket
@@ -97,13 +102,14 @@
     BOOL ret = [self connectToHostAddrees];
     NSLog(@"%d",ret);
     
-//    Byte b[10] = {1,2,3,4,5,6,7,8,9,0};
-//    NSData *dat = [[NSData alloc] initWithBytes:b length:10];
+//    Byte b[10] = {0,1,2,3,4,5,6,7,8,9,0};
+//    NSData *da = [[NSData alloc] initWithBytes:b length:11];
 //    
-//    NSString *str = [[NSString alloc] initWithData:dat encoding:NSASCIIStringEncoding];
+//    NSString *str = [[NSString alloc] initWithData:da encoding:6];
 //    
 //    
-//    NSData *dat2 = [str dataUsingEncoding:NSASCIIStringEncoding];
+//    NSData *dat2 = [str dataUsingEncoding:6];
+//    NSLog(@"%@",dat2);
     
     
     if ([devType isEqualToString:@"电灯"]) {
@@ -128,8 +134,20 @@
         self.bComOrData = 0x00;
     }
     
-    NSData *dSendData = [sendData dataUsingEncoding:NSASCIIStringEncoding];
+    NSData *tempdSendData = [sendData dataUsingEncoding:6];
     
+    int len = [sendData length];
+    Byte tmpData[len];
+    
+    for (int i = 0; i<len; i++) {
+        [tempdSendData getBytes:&tmpData[i] range:NSMakeRange(i, 1)];
+        tmpData[i] -= 1;
+        NSLog(@"%hhu",tmpData[i]);
+    }
+    NSData *dSendData = [[NSData alloc] initWithBytes:tmpData length:len];
+    
+//    NSString *s = [[NSString alloc] initWithData:dSendData encoding:NSASCIIStringEncoding];
+//    NSLog(@"%@",s);
     self.sDataLength = dSendData.length;
 
     [self.mdataDataBuf appendBytes:&bDataHeader length:1];
@@ -162,39 +180,53 @@
         if ([[NSThread currentThread] isCancelled]) {
             [NSThread exit];
         }
-        sleep(1);
-
+        sleep(3);
+        
         [self connectToHostAddrees];
+        
         //TODO:处理接收的数据
-        
-        [self.asyncSocket readDataWithTimeout:5 buffer:self.mdataRecvDataBuf bufferOffset:self.mdataRecvDataBuf.length tag:10];
-
-        sleep(5);
-//        [self.asyncSocket readDataWithTimeout:-1.0 tag:10];
-        
+        [self.asyncSocket readDataWithTimeout:3 buffer:self.mdataRecvDataBuf bufferOffset:self.mdataRecvDataBuf.length tag:10];
+//        [self.asyncSocket readDataWithTimeout:5 tag:10];
         NSLog(@"Thread--mdataRecvDataBuf:%@",self.mdataRecvDataBuf);
         
-//        int len = [self.mdataRecvDataBuf length];
-//        Byte tmpData[len];
-//        
-//        for (int i = 0; i<len; i++) {
-//            [self.mdataRecvDataBuf getBytes:&tmpData[i] range:NSMakeRange(i, 1)];
-//            NSLog(@"%hhu",tmpData[i]);
-//        }
-        
-        
+        short dataLen;
+        if (self.mdataRecvDataBuf.length > 6) {
+            Byte len2[2];
+            [self.mdataRecvDataBuf getBytes:&len2[0] range:NSMakeRange(4, 1)];
+            [self.mdataRecvDataBuf getBytes:&len2[1] range:NSMakeRange(5, 1)];
+            dataLen = ((len2[0] << 8) | len2[1]);
+            NSLog(@"%ld",(unsigned long)self.mdataRecvDataBuf.length);
+            if (dataLen + 4+2+1 == self.mdataRecvDataBuf.length) {
+                NSMutableData *mdataTempData = [[NSMutableData alloc] initWithData:self.mdataRecvDataBuf];
+                [self.mdataRecvDataBuf setLength:0];
+                [self dealWithARecvPacktData:mdataTempData];
+            }
+        }
     }
 }
 
 - (void)dealWithARecvPacktData:(NSData *)recvData
 {
+    NSLog(@"dealWithData:%@",recvData);
+    
+    //让每个字节+1
+    int len = [recvData length];
+    Byte tmpData[len];
+
+    for (int i = 0; i<len; i++) {
+        [recvData getBytes:&tmpData[i] range:NSMakeRange(i, 1)];
+        tmpData[i] += 1;
+        NSLog(@"%hhu",tmpData[i]);
+    }
+    NSData *sendData = [[NSData alloc] initWithBytes:tmpData length:len];
+    
+    //使用代理将收的数据发出去
+    if ([self.sendRecvDataDelegate respondsToSelector:@selector(recvSocketData:)]) {
+        [self.sendRecvDataDelegate recvSocketData:sendData];
+        
+    }
     
 }
-
-
-
-
-
 
 
 
@@ -219,100 +251,11 @@
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
    
-    NSData *recData = [[NSData alloc] initWithData:data];
+//    NSData *recData = [[NSData alloc] initWithData:data];
 //    short recDataLen;
 //    [self.mdataRecvDataBuf appendData:recData];
     NSLog(@"-----didReadData data:%@",data);
 //     NSLog(@"didReadData mdataRecvDataBuf:%@",self.mdataRecvDataBuf);
-    /*
-    int len = [recMultData length];
-    recvDataCount = len;
-    Byte tmpData[recvDataCount];
-    
-    for (int i = 0; i<recvDataCount; i++) {
-        [recMultData getBytes:&tmpData[i] range:NSMakeRange(i, 1)];
-        NSLog(@"%hhu",tmpData[i]);
-    }
-    if (tmpData[0] == 0x00) {
-        if (recvDataCount >= 3) {
-            recDataLen = (tmpData[1] << 8) | (tmpData[2]&0xFF);
-            
-            if(recvDataCount == recDataLen && (tmpData[recvDataCount - 1] == 0xFF) ) {//如果数据接收完整
-                
-                //得到数据
-                gType = tmpData[3];
-                
-                //TODO:find the max id
-                NSMutableArray *tmpMutArry = [self readDataFile];
-                Byte tmpLastID = 0, tmpPreID  = 0, tmpMaxID = 0;
-                for (NSInteger i = 0; i<tmpMutArry.count; i++) {
-                    NSMutableDictionary * tmpMutDic = [tmpMutArry objectAtIndex:i];
-                    
-                    Byte tmpType = [[tmpMutDic objectForKey:@"type"] unsignedCharValue];
-                    if (tmpType == gType) {
-                        
-                        tmpPreID = [[tmpMutDic objectForKey:@"ID"] unsignedCharValue];
-                        tmpMaxID = tmpPreID >= tmpLastID ? tmpPreID :tmpLastID;
-                        tmpLastID = tmpPreID;
-                        
-                    }
-                }
-                
-                gID = tmpMaxID + 1;
-                
-                uint64_t tmpUUID = 0;
-                for (int i = 0; i<8; i++) {
-                    tmpUUID = tmpUUID << 8;
-                    tmpUUID |= tmpData[i+6];
-                }
-                
-                gUUIDH = tmpUUID;
-                
-                tmpUUID = 0;
-                for (int i = 0; i<8; i++) {
-                    tmpUUID = tmpUUID << 8;
-                    tmpUUID |= tmpData[i+14];
-                }
-                
-                gUUIDL = tmpUUID;
-                
-                
-                
-                switch (tmpData[3]) {
-                    case 0x00:
-                        NSLog(@"主控");
-                        [_DevNameLab setText:@"主控"];
-                        gDevNameTextf.text = [NSString stringWithFormat: @"主控%d",gID];
-                        
-                        break;
-                    case 0x01:
-                        NSLog(@"窗帘开关型");
-                        [_DevNameLab setText:@"窗帘开关型"];
-                        gDevNameTextf.text = [NSString stringWithFormat: @"窗帘开关型%d",gID];
-                        break;
-     
-                }
-                
-                
-                [_actIdctV stopAnimating];
-                [recMultData setLength:0];
-                recvDataCount = 0;
-                //                [_asyncSocket readDataWithTimeout:-1.0 tag:1];
-            }
-            else{//如果接收到的数据没有到达接收到数据的长度 并且帧尾不是0xFF继续接收
-                [_asyncSocket readDataWithTimeout:-1.0 tag:1];
-            }
-        } else { //如果接受的数据不够 继续接收
-            [_asyncSocket readDataWithTimeout:-1.0 tag:1];
-        }
-        
-    } else { //如果枕头不是0x00 抛掉以前接收的数据重新接收
-        //clean recMultData;重新接受
-        [recMultData setLength:0];
-        recvDataCount = 0;
-        [_asyncSocket readDataWithTimeout:-1.0 tag:1];
-    }
-	*/
 }
 
 
